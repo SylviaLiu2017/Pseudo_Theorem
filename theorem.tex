@@ -1,0 +1,142 @@
+
+
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or epsÂ§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsmath} 
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{bbm}
+\usepackage{bbold}
+\usepackage[T1]{fontenc}
+%SetFonts
+
+%SetFonts
+
+
+\title{}
+\author{}
+\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\section{General Notations}
+
+\begin{itemize}
+
+	\item {$N$: Number of users}
+	
+	\item {$n$: Number of items,    $
+	n = \left \{
+	\begin{aligned}
+	&2m-1, && \text{if n is odd} \\
+	&2m, && \text{otherwise}
+	\end{aligned} \right.
+	$}
+	
+	\item {$\bm{R}^1,...,\bm{R}^N$: full rankings given by the users}
+	
+	\item{\{$i_1, ..., i_n$\}: a set of ranking that determines which item to be sampled first. i.e. $i_j = 1$ means the $j$-th item is to be sampled first}
+	\item{ \{$o_1, ..., o_n$\}: a set of ordering that corresponds to (one-to-one relationship) \{$i_1, ..., i_n$\} s.t. $i_{o_1} = 1$ }
+	
+	
+	\item {$\bm{R}^j$ = \{$R^j_1,...,R^j_n,$\} $\sim$ Mallows($\bm{\rho}^0, \alpha^0$)}
+	\item{ $\bm{\rho}^0 \leftrightarrow \bm{o}^0$ s.t. ${{\rho}^0}^{-1}(m) = o^0_m$}
+	
+	\item {$P(\bm{\rho}|\bm{R}^1,...,\bm{R}^N,\alpha^o)$: Mallows posterior}
+	
+	\item {$q(\tilde{\bm{\rho}}|\dots)$ : pseudolikelihood that approxiamtes the Mallows posterior}
+	\item {$q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha^0) \\
+		=q(\tilde{\rho}_{o_1}|\alpha^0,o_1) \cdot
+		q(\tilde{\rho}_{o_2}|\alpha^0,o_2, \tilde{\rho}_{o_1}) \cdot
+		... \cdot
+		q(\tilde{\rho}_{o_{n-1}}|\alpha^0,o_{n-1}, \tilde{\rho}_{o_1},...,\tilde{\rho}_{o_{n-2}}) \cdot
+		q(\tilde{\rho}_{o_{n}}|\alpha^0,o_{n}, \tilde{\rho}_{o_1},...,\tilde{\rho}_{o_{n-1}})$}
+	\item{	$ {q(\tilde{\rho}_{o_1}|\alpha^0, o_1) }
+		= \frac{\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_1}, \tilde{\rho}_{o_1})\}\mathbb{1}_{\tilde{\rho}_{o_1}\in \{1, ...,n\}}}
+		{\sum\limits_{\tilde{r}_{o_1}\in \{1, .., n\}}\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_1}, \tilde{r}_{o_1})\}} $}
+	
+	\item{
+		$ {q(\tilde{\rho}_{o_k}|\alpha^0, o_k, \tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}}) }
+		= \frac{\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_k}, \tilde{\rho}_{o_k})\}\mathbb{1}_{\tilde{\rho}_{o_k}\in\{1, .., n\}\textbackslash \{\tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}}\}}}
+		{\sum\limits_{\tilde{r}_{o_k}\in \{1, .., n\}\textbackslash \{\tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}}\}}\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_k}, \tilde{r}_{o_k})\}} $} for $k = 2, ..., n$
+	
+	\item{ $\mathcal{V}_{\bm{\rho}^o}$ = $
+		\left \{ 
+		\begin{aligned}
+		&\{\bm{r}\in \mathcal{P}_n: r_{o^0_m}=1, r_{o^0_{m\pm k}} \in \{2k, 2k+1 \}, k = 1, ..., m-1 \}, && \text{if n is odd} \\
+		&\{\bm{r}\in \mathcal{P}_n: \{r_{o^0_{m-k}},r_{o^0_{m+k+1}} \} \in \{2k+1, 2k+2 \}, k = 0, ..., m \}, && \text{if n is even} 
+		\end{aligned} \right.
+		$
+	}
+
+\end{itemize}
+
+\section{Theorem 0}
+As $N \rightarrow \infty$, $\bm{\rho}^0 \rightarrow rank(\mathbb{E}[{R}_1],...,\mathbb{E}[{R}_n]) \rightarrow rank({1\over N}\sum\limits_{j=0}^{N}R_1^j,...,{1\over N}\sum\limits_{j=0}^{N}R_n^j)$
+
+It is proven that $\mathbb{E}[R_{o^0_j}] < \mathbb{E}[R_{o^0_k}] \text{ }\forall j<k \text{ and } \alpha^0 >0 $. Therefore, as the number of users $N \rightarrow \infty$, the exact value of $\bm{\rho}^0$ can be inferred from the data by taking the marginal mean of each item and rank them according to the marginal means.
+
+\section{Theorem 1}
+$\lim\limits_{N \rightarrow \infty}$ $\operatorname*{arg\,min}\limits_{g\in\mathcal{D}_{\bm{\rho}^0}} KL (P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g(i_1,...,i_n|\bm{\rho}^0)$ \\
+= $g^*(i_1,...,i_n|\mathcal{V}_{{\bm{\rho}}^0})$, \\ 
+where 
+\begin{itemize}
+	\item{
+		$\mathcal{D}_{\bm{\rho}^0}$ is a set of all distrbutions on the space of permutation $\mathcal{P}_n, \text{which depends on } \bm{\rho}^0$, i.e., $\mathcal{D}_{\bm{\rho}^0} $=\{\textcolor{red}{what is a good notation of this??\} } 
+	}
+	\item{
+		$g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0})$ is a distribution whose density is concentrated on $\bm{\rho}^0$, i.e. \\
+		  $
+		\left \{
+		\begin{aligned}
+		&g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0}) = |\mathcal{V}_{\bm{\rho}^0}|^{-1}>0 , && \text{if} \{i_1,...,i_n\}\in \mathcal{V}_{\bm{\rho}^0}\\
+		&g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0}) = 0 , && \text{if} \{i_1,...,i_n\}\notin \mathcal{V}_{\bm{\rho}^0}
+		\end{aligned} \right.
+		$	
+	}
+
+\end{itemize}
+
+explanation: for a set of distributions $g$, which are defined the space of permutation of $n$ items, i.e.$\mathcal{P}_n$, the distribution $g^*$ that minimizes the KL-divergence betweeeh the Mallows posterior and the pseudolikelihood defined above, is a uniform distribution with its density concentrated on $\mathcal{V}_{\bm{\rho}^o}$
+
+\section{Theorem 2}
+For a given $N < \infty$, $\hat{\bm{\rho}}^0$ is defined as $rank({1\over N}\sum\limits_{j=0}^{N}R_1^j, ..., {1\over N}\sum\limits_{j=0}^{N}R_n^j)$. $\hat{\bm{\rho}}^0 \neq \bm{\rho}^0$. The corresponding ``$\mathcal{V}$-like'' set is notated as $\mathcal{V}_{\hat{\bm{\rho}}^0}$.
+
+$\exists\sigma \geq 0$,
+
+ KL $(P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g^{*}(i_1,...,i_n|\mathcal{V}_{\hat{\bm{\rho}}^0)}\geq $\\
+ KL $(P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g'(i_1,...,i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma)\geq $\\
+ $\lim\limits_{N\rightarrow \infty}$KL $(P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g^{*}(i_1,...,i_n|{\mathcal{V}_{\bm{\rho}^0}}), $\\
+ where 
+ \begin{itemize}
+ 	\item {$\hat{\bm{v}} \sim \mathcal{U} (\hat{\bm{v}}|\mathcal{V}_{\hat{\rho_{0}}})$}
+  	\item {$i_i'\sim \mathcal{N}(i_i'|\hat{v}_i, \sigma)$} for $i = 1,...,n $
+ 	\item {$i_1, ..., i_n = rank(i_1', ..., i_n')$},
+ \end{itemize}
+and
+ 	$g'(i_1, ..., i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}) = \sum\limits_{\hat{\bm{v}}\in \mathcal{V}_{\hat{\bm{\rho}}^0}} \mathcal{U} (\hat{\bm{v}}|\mathcal{V}_{\hat{\bm{\rho}}^{0}})\prod\limits_{i=1}^{n}\mathcal{N}(i_i'|\hat{v}_i, \sigma)\cdot {1}$
+ 	
+% \end{itemize}
+ 
+ Explanation: as $N$ is limited, $\bm{\rho}^0$, and therefore, $\mathcal{V}_{\bm{\rho}^0}$ cannot be accurately inferred from the data. We can however, sample for $i_1, ..., i_n$ by sampling for each item $i$ from a univariate Gaussian distribution centred on $\hat{v}_i$ with a fixed variance $\sigma$ for all items, and then rank the resulting ``scores'' to convert it back to rankings. By doing so, we can achieve a smaller KL divergence to the Mallows posterior, compared to not introducing the Gaussian noise.
+ 
+\section{Theorem 3}
+ $
+\sigma = \left \{
+\begin{aligned}
+&0, && \text{if } \delta(\alpha,n,N)\leq \delta ^{*} \\
+&f(\alpha, n,N), && \text{otherwise}
+\end{aligned} \right.
+$
+
+Explanation: With the usage of $g'(i_1, ...,i_n|\mathcal{V}_{\hat{\bm{\rho}}^0})$, the value of $\sigma$ which minimizes the KL-divergence between the Mallows posterior and the resulted Pseudolikelihood should be 0 when $\delta(\alpha,n,N) \geq \delta^*$. Beyond this point, the optimal choice of $\sigma$ should be greater than 0, and it follows a function $f(\alpha,n,N)$
+
+\section{Theorem 4}
+as $N \rightarrow \infty,\delta^{*} \rightarrow \text{max}\delta(\alpha,n,N) $, $\forall \alpha >0, n\geq 1$
+\end{document}  
