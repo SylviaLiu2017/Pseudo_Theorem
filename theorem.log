@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.16)  15 NOV 2019 17:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.16)  18 NOV 2019 16:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -209,21 +209,46 @@ Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-)) (./theorem.aux)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2019/05/04 3.31 The Babel package
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2019/05/04 3.31 Babel switching mechanism
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2019/05/04 3.31 Babel common definitions
+\babel@savecnt=\count104
+\U@D=\dimen122
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count105
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+\c@theorem=\count106
+\c@corollary=\count107
+
+(./theorem.aux)
 \openout1 = `theorem.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -261,16 +286,16 @@ LaTeX Font Info:    ... okay on input line 26.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count104
-\scratchdimen=\dimen122
+\scratchcounter=\count108
+\scratchdimen=\dimen123
 \scratchbox=\box29
-\nofMPsegments=\count105
-\nofMParguments=\count106
+\nofMPsegments=\count109
+\nofMParguments=\count110
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count107
-\MPscratchDim=\dimen123
-\MPnumerator=\count108
-\makeMPintoPDFobject=\count109
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen124
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
 \everyMPtoPDFconversion=\toks23
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -300,58 +325,51 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 27.
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 27.
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 32.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 38.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 32.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 38.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 73.
 
-Overfull \hbox (31.51538pt too wide) in paragraph at lines 54--60
-\OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 q\OT1/cmr/m/n/10.95 ([]\OMS/cmsy/m/n/1
-0.95 j\OML/cmm/m/it/10.95 []; o[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A 
-\OML/cmm/m/it/10.95 q\OT1/cmr/m/n/10.95 ([]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/1
-0.95 []; o[]; []\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.
-95 ::: \OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 q\OT1/cmr/m/n/10.95 ([]\OMS/
-cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 []; o[]; []; :::; []\OT1/cmr/m/n/10.95 ) \
-OMS/cmsy/m/n/10.95 ^^A \OML/cmm/m/it/10.95 q\OT1/cmr/m/n/10.95 ([]\OMS/cmsy/m/n
-/10.95 j\OML/cmm/m/it/10.95 []; o[]; []; :::; []\OT1/cmr/m/n/10.95 )$ 
- []
-
-LaTeX Font Info:    Try loading font information for U+bbold on input line 62.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/bbold/Ubbold.fd)
 
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 67.
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 78.
 
 
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 67.
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 78.
 
 
-Overfull \hbox (6.68481pt too wide) in paragraph at lines 65--68
-[]$[] \OT1/cmr/m/n/10.95 = []$ \T1/cmr/m/n/10.95 for $\OML/cmm/m/it/10.95 k \OT
-1/cmr/m/n/10.95 = 2\OML/cmm/m/it/10.95 ; :::; n$ 
+Overfull \hbox (20.12386pt too wide) in paragraph at lines 76--79
+[]$[] \OT1/cmr/m/n/10.95 = []$
+ []
+
+[1
+
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (6.3196pt too wide) in paragraph at lines 87--95
+[]$\OMS/cmsy/m/n/10.95 V[]$ \T1/cmr/m/n/10.95 = $[]$ 
  []
 
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 81.
+(amsmath)                 on input line 129.
 
-[1
 
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (10.5329pt too wide) in paragraph at lines 86--89
+Overfull \hbox (10.5329pt too wide) in paragraph at lines 134--137
 $[]$ $[] \OML/cmm/m/it/10.95 KL\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 P\OT1/cm
 r/m/n/10.95 (\OML/cmm/b/it/10.95 ^^Z\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 [
 ]; \OML/cmm/b/it/10.95 R[]\OML/cmm/m/it/10.95 ; :::; \OML/cmm/b/it/10.95 R[]\OT
@@ -363,40 +381,42 @@ i[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/1
 .95 )$ 
  []
 
-[2] [3] (./theorem.aux) ) 
+[2] [3] [4] (./theorem.aux) ) 
 Here is how much of TeX's memory you used:
- 3977 strings out of 492616
- 51366 string characters out of 6129481
- 135321 words of memory out of 5000000
- 7807 multiletter control sequences out of 15000+600000
- 19453 words of font info for 60 fonts, out of 8000000 for 9000
+ 4535 strings out of 492616
+ 58843 string characters out of 6129481
+ 152628 words of memory out of 5000000
+ 8345 multiletter control sequences out of 15000+600000
+ 20925 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,15n,35p,885b,228s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm
--super/cm-super-t1.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/b
-bold-type1/bbold10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/b
-bold-type1/bbold7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/ams
-fonts/cmextra/cmex8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfo
-nts/cmextra/cmmib6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/a
-msfonts/cmextra/cmmib8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/s
-fbx1440.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfr
-m0800.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1
+ 37i,15n,35p,885b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvip
+s/cm-super/cm-super-t1.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/publ
+ic/bbold-type1/bbold10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publ
+ic/bbold-type1/bbold7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
+/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/a
+msfonts/cmextra/cmmib6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publ
+ic/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-sup
+er/sfbx1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super
+/sfbx1440.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/s
+frm0800.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfr
+m1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti1
 095.pfb>
-Output written on theorem.pdf (3 pages, 199644 bytes).
+Output written on theorem.pdf (4 pages, 243060 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 102 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

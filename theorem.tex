@@ -14,6 +14,12 @@
 \usepackage{bbm}
 \usepackage{bbold}
 \usepackage[T1]{fontenc}
+
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
 %SetFonts
 
 %SetFonts
@@ -41,43 +47,85 @@
 	
 	\item {$\bm{R}^1,...,\bm{R}^N$: full rankings given by the users}
 	
-	\item{\{$i_1, ..., i_n$\}: a set of ranking that determines which item to be sampled first. i.e. $i_j = 1$ means the $j$-th item is to be sampled first}
-	\item{ \{$o_1, ..., o_n$\}: a set of ordering that corresponds to (one-to-one relationship) \{$i_1, ..., i_n$\} s.t. $i_{o_1} = 1$ }
-	
 	
 	\item {$\bm{R}^j$ = \{$R^j_1,...,R^j_n,$\} $\sim$ Mallows($\bm{\rho}^0, \alpha^0$)}
-	\item{ $\bm{\rho}^0 \leftrightarrow \bm{o}^0$ s.t. ${{\rho}^0}^{-1}(m) = o^0_m$}
+	
 	
 	\item {$P(\bm{\rho}|\bm{R}^1,...,\bm{R}^N,\alpha^o)$: Mallows posterior}
 	
-	\item {$q(\tilde{\bm{\rho}}|\dots)$ : pseudolikelihood that approxiamtes the Mallows posterior}
-	\item {$q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha^0) \\
-		=q(\tilde{\rho}_{o_1}|\alpha^0,o_1) \cdot
-		q(\tilde{\rho}_{o_2}|\alpha^0,o_2, \tilde{\rho}_{o_1}) \cdot
-		... \cdot
-		q(\tilde{\rho}_{o_{n-1}}|\alpha^0,o_{n-1}, \tilde{\rho}_{o_1},...,\tilde{\rho}_{o_{n-2}}) \cdot
-		q(\tilde{\rho}_{o_{n}}|\alpha^0,o_{n}, \tilde{\rho}_{o_1},...,\tilde{\rho}_{o_{n-1}})$}
-	\item{	$ {q(\tilde{\rho}_{o_1}|\alpha^0, o_1) }
-		= \frac{\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_1}, \tilde{\rho}_{o_1})\}\mathbb{1}_{\tilde{\rho}_{o_1}\in \{1, ...,n\}}}
-		{\sum\limits_{\tilde{r}_{o_1}\in \{1, .., n\}}\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_1}, \tilde{r}_{o_1})\}} $}
 	
-	\item{
-		$ {q(\tilde{\rho}_{o_k}|\alpha^0, o_k, \tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}}) }
-		= \frac{\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_k}, \tilde{\rho}_{o_k})\}\mathbb{1}_{\tilde{\rho}_{o_k}\in\{1, .., n\}\textbackslash \{\tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}}\}}}
-		{\sum\limits_{\tilde{r}_{o_k}\in \{1, .., n\}\textbackslash \{\tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}}\}}\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_k}, \tilde{r}_{o_k})\}} $} for $k = 2, ..., n$
+	\item{\{$i_1, ..., i_n$\}: a ranking of $n$ items that determines the sequence following which the items are to be sampled. i.e. $i_j = k$ indicates that item $j$ is the k-th item is to be sampled}
 	
-	\item{ $\mathcal{V}_{\bm{\rho}^o}$ = $
-		\left \{ 
-		\begin{aligned}
-		&\{\bm{r}\in \mathcal{P}_n: r_{o^0_m}=1, r_{o^0_{m\pm k}} \in \{2k, 2k+1 \}, k = 1, ..., m-1 \}, && \text{if n is odd} \\
-		&\{\bm{r}\in \mathcal{P}_n: \{r_{o^0_{m-k}},r_{o^0_{m+k+1}} \} \in \{2k+1, 2k+2 \}, k = 0, ..., m \}, && \text{if n is even} 
-		\end{aligned} \right.
-		$
-	}
+	\item{ \{$o_1, ..., o_n$\}: an ordering of $n$ items that corresponds to \{$i_1, ..., i_n$\} s.t. $i_{o_k} = k$ }. $\{o_1, ...,o_n\}$ and \{$i_1, ..., i_n$\} have a one-to-one relationship
+	
+	%pseudo components 
+	\item {$\sum\limits_{\{i_1, ..., i_n \}\in \mathcal{P}_n }q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha_0, \bm{R}^1, ...,\bm{R}^N) \cdot g(i_1, ..., i_n| \dots)$ : pseudolikelihood that approxiamtes the Mallows posterior}
+	
+	\item {$q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha^0, \bm{R}^1, ..., \bm{R}^N) \\
+		=q(\tilde{\rho}_{o_1}|\alpha^0,o_1, R^1_{o_1},...,R^N_{o_1}) \cdot
+		q(\tilde{\rho}_{o_2}|\alpha^0,o_2,\tilde{\rho}_{o_1} R^1_{o_2},...,R^N_{o_2}) \cdot
+		... \cdot \\
+		q(\tilde{\rho}_{o_{n-1}}|\alpha^0,o_{n-1}, \tilde{\rho}_{o_1},...,\tilde{\rho}_{o_{n-2}}, R^1_{n-1},...,R^N_{n-1}) \cdot
+		q(\tilde{\rho}_{o_{n}}|\alpha^0,o_{n}, \tilde{\rho}_{o_1},...,\tilde{\rho}_{o_{n-1}}, R^1_n, ..., R^N_n)$}
+	\begin{itemize}
+	\item{	$ {q(\tilde{\rho}_{o_1}|\alpha^0, o_1,R^1_{o_1}, ...,R^N_{o_1}) }
+	= \frac{\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_1}, \tilde{\rho}_{o_1})\}\mathbb{1}_{\tilde{\rho}_{o_1}\in \{1, ...,n\}}}
+	{\sum\limits_{\tilde{r}_{o_1}\in \{1, .., n\}}\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_1}, \tilde{r}_{o_1})\}} $}
+
+\item{
+	$ {q(\tilde{\rho}_{o_k}|\alpha^0, o_k, \tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}},R^1_{o_k}, ...,R^N_{o_k}) }
+	= \frac{\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_k}, \tilde{\rho}_{o_k})\}\mathbb{1}_{\tilde{\rho}_{o_k}\in\{1, .., n\}\textbackslash \{\tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}}\}}}
+	{\sum\limits_{\tilde{r}_{o_k}\in \{1, .., n\}\textbackslash \{\tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}}\}}\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_k}, \tilde{r}_{o_k})\}} $} for $k = 2, ..., n$
+
+	\end{itemize}
+
+	\item{ $\bm{\rho}^0 \leftrightarrow \bm{o}^0$ s.t. ${{\rho}^0}^{-1}(m) = o^0_m$}
+	
+	
+	\item{Define the ``v-function'' $f_v(\cdot)$ such that $f_v(\bm{\rho}^0)$ = $\mathcal{V}_{\bm{\rho}^0}$}, where 
+	\begin{itemize}
+			\item{ $\mathcal{V}_{\bm{\rho}^o}$ = $
+			\left \{ 
+			\begin{aligned}
+			&\{\bm{r}\in \mathcal{P}_n: r_{o^0_m}=1, r_{o^0_{m\pm k}} \in \{2k, 2k+1 \}, k = 1, ..., m-1 \}, && \text{if n is odd} \\
+			&\{\bm{r}\in \mathcal{P}_n: \{r_{o^0_{m-k}},r_{o^0_{m+k+1}} \} \in \{2k+1, 2k+2 \}, k = 0, ..., m \}, && \text{if n is even} 
+			\end{aligned} \right.
+			$
+		}
+	\end{itemize}
+
 
 \end{itemize}
 
-\section{Theorem 0}
+\section{Theorems and Lemmas}
+
+\begin{lemma}
+Given there are odd number of items, i.e. $n = 2m - 1$. $\forall \alpha^0 \in (0, \infty)$,
+
+	\begin{enumerate} 
+		\item{$\mathbb{E}(R_{o^0_m}|\bm{\rho}_{0}, \alpha^0) = \rho^0_m = m$ }
+		\item{$\forall j \in [1, m-2]$, $j< \mathbb{E}[R_{o^0_j}|\bm{\rho}^0, \alpha^0] <\mathbb{E}[R_{o^0_{j+1}}|\bm{\rho}^0, \alpha^0] < m$}
+		\item{$\forall j \in [m+2, 2m-1]$, $m< \mathbb{E}[R_{o^0_{j-1}}|\bm{\rho}^0, \alpha^0] <\mathbb{E}[R_{o^0_{j}}|\bm{\rho}^0, \alpha^0] < j$}
+	\end{enumerate}
+Similarly, if $n$ is even, i.e. $n = 2m$,  $\forall \alpha^0 \in (0, \infty)$,
+	\begin{enumerate} 
+	\item{$\forall j \in [1, m-1]$, $j< \mathbb{E}[R_{o^0_j}|\bm{\rho}^0, \alpha^0] <\mathbb{E}[R_{o^0_{j+1}}|\bm{\rho}^0, \alpha^0]$}
+	\item{$\forall j \in [m+2, 2m]$, $\mathbb{E}[R_{o^0_{j-1}}|\bm{\rho}^0, \alpha^0] <\mathbb{E}[R_{o^0_{j}}|\bm{\rho}^0, \alpha^0] < j$}
+\end{enumerate}
+Note that for both cases, it satisfies that $\forall 1\leq j<k\leq n$ and $\forall \alpha > 0 $,
+{$\mathbb{E}[R_{j}|\bm{\rho}^0, \alpha^0]<\mathbb{E}[R_{k}|\bm{\rho}^0, \alpha^0]$}
+\end{lemma}
+
+\begin{lemma}
+ As $N \rightarrow \infty$, $\frac{1}{N}\sum\limits_{j=1}^{N}R^j_i $
+\end{lemma}
+
+\begin{theorem}
+	Let $f$ be a function whose derivative exists in every point, then $f$ 
+	is a continuous function.
+
+\end{theorem}
+
 As $N \rightarrow \infty$, $\bm{\rho}^0 \rightarrow rank(\mathbb{E}[{R}_1],...,\mathbb{E}[{R}_n]) \rightarrow rank({1\over N}\sum\limits_{j=0}^{N}R_1^j,...,{1\over N}\sum\limits_{j=0}^{N}R_n^j)$
 
 It is proven that $\mathbb{E}[R_{o^0_j}] < \mathbb{E}[R_{o^0_k}] \text{ }\forall j<k \text{ and } \alpha^0 >0 $. Therefore, as the number of users $N \rightarrow \infty$, the exact value of $\bm{\rho}^0$ can be inferred from the data by taking the marginal mean of each item and rank them according to the marginal means.
