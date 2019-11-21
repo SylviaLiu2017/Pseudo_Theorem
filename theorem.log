@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.16)  18 NOV 2019 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.16)  21 NOV 2019 11:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -386,7 +386,25 @@ i[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/1
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 140.
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--167
+Overfull \hbox (7.83916pt too wide) in paragraph at lines 141--143
+[]$\OMS/cmsy/m/n/10.95 D[]$ \T1/cmr/m/it/10.95 is the set of all dis-tr-bu-tion
+s on the space of per-mu-ta-tion $\OMS/cmsy/m/n/10.95 P[]\OML/cmm/m/it/10.95 ; 
+[]\OML/cmm/b/it/10.95 ^^Z[]$ 
+ []
+
+
+Overfull \hbox (21.37338pt too wide) in paragraph at lines 144--159
+[]$\T1/cmr/m/it/10.95 , where $\OMS/cmsy/m/n/10.95 jV[]j \OT1/cmr/m/n/10.95 = [
+]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--159
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
 
  []
 
@@ -394,7 +412,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 165--167
 Here is how much of TeX's memory you used:
  4548 strings out of 492616
  58968 string characters out of 6129481
- 152683 words of memory out of 5000000
+ 154683 words of memory out of 5000000
  8355 multiletter control sequences out of 15000+600000
  23074 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -423,7 +441,7 @@ x1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1
 0.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1095.
 pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti1095.pf
 b>
-Output written on theorem.pdf (4 pages, 256335 bytes).
+Output written on theorem.pdf (4 pages, 262649 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  77 compressed objects within 1 object stream
