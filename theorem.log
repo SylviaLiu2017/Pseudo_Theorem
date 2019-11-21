@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.16)  21 NOV 2019 11:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.16)  21 NOV 2019 14:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -343,34 +343,34 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
-LaTeX Font Info:    Try loading font information for U+bbold on input line 74.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 75.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/bbold/Ubbold.fd)
 
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 79.
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 80.
 
 
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 79.
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 80.
 
 
-Overfull \hbox (20.12386pt too wide) in paragraph at lines 77--80
+Overfull \hbox (20.12386pt too wide) in paragraph at lines 78--81
 []$[] \OT1/cmr/m/n/10.95 = []$
  []
 
 [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (6.3196pt too wide) in paragraph at lines 88--96
+Overfull \hbox (6.3196pt too wide) in paragraph at lines 89--97
 []$\OMS/cmsy/m/n/10.95 V[]$ \T1/cmr/m/n/10.95 = $[]$ 
  []
 
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 128.
+(amsmath)                 on input line 129.
 
 
-Overfull \hbox (9.93625pt too wide) in paragraph at lines 136--139
+Overfull \hbox (9.93625pt too wide) in paragraph at lines 137--140
 []$[] [] \OML/cmm/m/it/10.95 KL\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 P\OT1/cm
 r/m/n/10.95 (\OML/cmm/b/it/10.95 ^^Z\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 [
 ]; \OML/cmm/b/it/10.95 R[]\OML/cmm/m/it/10.95 ; :::; \OML/cmm/b/it/10.95 R[]\OT
@@ -384,28 +384,34 @@ i[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/1
 
 [2]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 140.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 141.
 
-Overfull \hbox (7.83916pt too wide) in paragraph at lines 141--143
-[]$\OMS/cmsy/m/n/10.95 D[]$ \T1/cmr/m/it/10.95 is the set of all dis-tr-bu-tion
-s on the space of per-mu-ta-tion $\OMS/cmsy/m/n/10.95 P[]\OML/cmm/m/it/10.95 ; 
-[]\OML/cmm/b/it/10.95 ^^Z[]$ 
- []
-
-
-Overfull \hbox (21.37338pt too wide) in paragraph at lines 144--159
+Overfull \hbox (21.37338pt too wide) in paragraph at lines 145--160
 []$\T1/cmr/m/it/10.95 , where $\OMS/cmsy/m/n/10.95 jV[]j \OT1/cmr/m/n/10.95 = [
 ]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--159
+Underfull \hbox (badness 10000) in paragraph at lines 145--160
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--174
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
 
+ []
+
+
+Overfull \hbox (3.48244pt too wide) in paragraph at lines 176--179
+[]\T1/cmr/m/it/10.95 where $\OML/cmm/m/it/10.95 g[]\OT1/cmr/m/n/10.95 (\OML/cmm
+/m/it/10.95 i[]; :::; i[]\OMS/cmsy/m/n/10.95 jV[]\OML/cmm/m/it/10.95 ; ^^[\OT1/
+cmr/m/n/10.95 ) = []\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 g[]\OT1/cmr/m/n/10
+.95 ([]\OMS/cmsy/m/n/10.95 jV[]\OT1/cmr/m/n/10.95 ) [][] \OMS/cmsy/m/n/10.95 F[
+]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 i[]; :::; i[]\OMS/cmsy/m/n/10.95 j\OML
+/cmm/m/it/10.95 x[]; :::; x[]\OT1/cmr/m/n/10.95 ) [] \OMS/cmsy/m/n/10.95 N\OT1/
+cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OMS/cmsy/m/n/10.95 j[]\OML/cmm/m/it/10.9
+5 ; ^^[\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 d\OML/cmm/b/it/10.95 x\OMS/cmsy/
+m/n/10.95 g$\T1/cmr/m/it/10.95 , and 
  []
 
 [3] [4] (./theorem.aux) ) 
@@ -441,7 +447,7 @@ x1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1
 0.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1095.
 pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti1095.pf
 b>
-Output written on theorem.pdf (4 pages, 262649 bytes).
+Output written on theorem.pdf (4 pages, 262441 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  77 compressed objects within 1 object stream

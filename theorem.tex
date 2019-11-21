@@ -46,10 +46,11 @@
 	\end{aligned} \right.
 	$}
 	
+	\item{$\mathcal{P}_n$: the space of permutation of $n$ items}
 	\item {$\bm{R}^1,...,\bm{R}^N$: full rankings given by the users}
 	
 	
-	\item {$\bm{R}^j$ = \{$R^j_1,...,R^j_n,$\} $\sim$ Mallows($\bm{\rho}^0, \alpha^0$)}
+	\item {$\bm{R}^j \in \mathcal{P}_n$= \{$R^j_1,...,R^j_n$\} $\sim$ Mallows($\bm{\rho}^0, \alpha^0$)}
 	
 	
 	\item {$P(\bm{\rho}|\bm{R}^1,...,\bm{R}^N,\alpha^o)$: Mallows posterior}
@@ -60,9 +61,9 @@
 	\item{ \{$o_1, ..., o_n$\}: an ordering of $n$ items that corresponds to \{$i_1, ..., i_n$\} s.t. $i_{o_k} = k$ }. $\{o_1, ...,o_n\}$ and \{$i_1, ..., i_n$\} have a one-to-one relationship
 	
 	%pseudo components 
-	\item {$\sum\limits_{\{i_1, ..., i_n \}\in \mathcal{P}_n }q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha_0, \bm{R}^1, ...,\bm{R}^N) \cdot g(i_1, ..., i_n| \dots)$ : pseudolikelihood that approxiamtes the Mallows posterior}
+	\item {$\sum\limits_{\{i_1, ..., i_n \}\in \mathcal{P}_n }q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha_0, \bm{R}^1, ...,\bm{R}^N) \cdot g(i_1, ..., i_n| \dots)$ : pseudolikelihood that approximates the Mallows posterior}
 	
-	\item {$q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha^0, \bm{R}^1, ..., \bm{R}^N) \\
+	\item {$q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha^0, \bm{R}^1, ..., \bm{R}^N)  = q(\tilde{\bm{\rho}}|o_1, ..., o_n, \alpha^0, \bm{R}^1, ..., \bm{R}^N)  \\
 		=q(\tilde{\rho}_{o_1}|\alpha^0,o_1, R^1_{o_1},...,R^N_{o_1}) \cdot
 		q(\tilde{\rho}_{o_2}|\alpha^0,o_2,\tilde{\rho}_{o_1} R^1_{o_2},...,R^N_{o_2}) \cdot
 		... \cdot \\
@@ -80,7 +81,7 @@
 
 	\end{itemize}
 
-	\item{ $\bm{\rho}^0 \leftrightarrow \bm{o}^0$ s.t. ${{\rho}^0}^{-1}(m) = o^0_m$}
+	\item{ $\bm{o}^0$: a set of ordering that corresponds to $\bm{\rho}^0$ s.t. ${{\rho}^0}^{-1}(m) = o^0_m$}
 	
 	
 	\item{Define the ``v-function'' $f_v(\cdot)$ such that $f_v(\bm{\rho}^0)$ = $\mathcal{V}_{\bm{\rho}^0}$}, where 
@@ -104,7 +105,7 @@
 Given there are odd number of items, i.e. $n = 2m - 1$. $\forall \alpha^0 \in (0, \infty)$,
 
 	\begin{enumerate} 
-		\item{$\mathbb{E}(R_{o^0_m}|\bm{\rho}_{0}, \alpha^0) = \rho^0_m = m$ }
+		\item{$\mathbb{E}(R_{o^0_m}|\bm{\rho}_{0}, \alpha^0) = \rho^0_{o_m} = m$ }
 		\item{$\forall j \in [1, m-2]$, $j< \mathbb{E}[R_{o^0_j}|\bm{\rho}^0, \alpha^0] <\mathbb{E}[R_{o^0_{j+1}}|\bm{\rho}^0, \alpha^0] < m$}
 		\item{$\forall j \in [m+2, 2m-1]$, $m< \mathbb{E}[R_{o^0_{j-1}}|\bm{\rho}^0, \alpha^0] <\mathbb{E}[R_{o^0_{j}}|\bm{\rho}^0, \alpha^0] < j$}
 	\end{enumerate}
@@ -128,17 +129,17 @@ Given a vector of length $n$, i.e. \{$x_1, ..., x_n$\},the rank function $rank(x
 As $N \rightarrow \infty$, and $\forall \alpha > 0$, \\ $rank({1\over N}\sum\limits_{j=0}^{N}R_1^j,...,{1\over N}\sum\limits_{j=0}^{N}R_n^j) \rightarrow rank(\mathbb{E}[{R}_1|\bm{\rho}^0, \alpha_0],...,\mathbb{E}[{R}_n|\bm{\rho}^0, \alpha_0]) =\bm{\rho}^0 $
 \end{theorem}
 
-That rephrase it, as $N$ approaches infinity, the Mallows consensus parameter $\bm{\rho}^0$ can be inferred from the data by taking the marginal mean for each item and then apply the rank function to these marginal means.
+To rephrase, as $N$ approaches infinity, the Mallows consensus parameter $\bm{\rho}^0$ can be inferred from the data by taking the marginal mean for each item and then apply the rank function to these marginal means.
 \subsection{ }
 \begin{theorem}
-	For a function $g$ defined on the space of permutation $\mathcal{P}_n$ which can depend on $\bm{\rho}^0$, 
+	For a function $g$ defined on $\mathcal{P}_n$ which can depend on $\bm{\rho}^0$, 
 
  $\operatorname*{arg\,min}\limits_{g\in\mathcal{D}_{\bm{\rho}^0}}\lim\limits_{N \rightarrow \infty} KL (P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g(i_1,...,i_n|\bm{\rho}^0)$ \\
 = $g^*(i_1,...,i_n|\mathcal{V}_{{\bm{\rho}}^0})$, \\ 
 where 
 \begin{itemize}
 	\item{
-		$\mathcal{D}_{\bm{\rho}^0}$ is the set of all distrbutions on the space of permutation $\mathcal{P}_n, \text{which can depend on } \bm{\rho}^0$ 
+		$\mathcal{D}_{\bm{\rho}^0}$ is the set of all distrbutions on $\mathcal{P}_n, \text{which can depend on } \bm{\rho}^0$ 
 	}
 	\item{
 		$g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0})$ is a distribution whose density is concentrated on $\bm{\rho}^0$, defined as \\
@@ -173,23 +174,24 @@ $\exists\sigma \geq 0$ and $g'(i_1, ..., i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \s
  KL $(P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g'(i_1,...,i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma)$\\
 
  where 
+ $g'(i_1, ..., i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma) = \sum\limits_{\hat{\bm{v}}\in \mathcal{V}_{\hat{\bm{\rho}}^0}}\{ g^* (\hat{\bm{v}}|\mathcal{V}_{\hat{\bm{\rho}}^{0}}) \int_{\bm{x}}\mathcal{F}_r(i_1,..., i_n|x_1, ...,x_n)\prod\limits_{i=1}^{n}\mathcal{N}(x_i|\hat{v}_i, \sigma)d\bm{x}\}$,
+ and
+ 
  \begin{itemize}
  	\item {$\hat{\bm{v}} \sim g^* (\hat{\bm{v}}|\mathcal{V}_{\hat{\bm{\rho}^{0}}})$}
   	\item {$x_i\sim \mathcal{N}(x_i|\hat{v}_i, \sigma)$} for $i = 1,...,n $
  	\item {$i_1, ..., i_n \sim \mathcal{F}_r(i_1, ..., i_n|x_1, ..., x_n)$}, where $
  	\mathcal{F}_r = \left \{
  	\begin{aligned}
- 	&1, && \text{if } i_1, ..., i_n = rank(x_1, ..., x_n) \\
+ 	&1, && \text{if } \{i_1, ..., i_n\} = rank(x_1, ..., x_n) \\
  	&0, && \text{otherwise}
  	\end{aligned} \right.
  	$
  
  \end{itemize}
-and
- 	$g'(i_1, ..., i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma) = \sum\limits_{\hat{\bm{v}}\in \mathcal{V}_{\hat{\bm{\rho}}^0}}\{ g^* (\hat{\bm{v}}|\mathcal{V}_{\hat{\bm{\rho}}^{0}}) \int_{\bm{x}}\mathcal{F}_r(i_1,..., i_n|x_1, ...,x_n)\prod\limits_{i=1}^{n}\mathcal{N}(x_i|\hat{v}_i, \sigma)d\bm{x}\}$
  	
 \end{theorem} 
-As $N$ is limited, $\bm{\rho}^0$, and therefore, $\mathcal{V}_{\bm{\rho}^0}$ usually cannot be accurately inferred from the data. We can however, sample for $i_1, ..., i_n$ by sampling for each item $i$ from a univariate Gaussian distribution centeredd on $\hat{v}_i$ with a fixed variance $\sigma$ for all items, and then obtain a ranking by using the rank function. By doing so, a smaller KL divergence from the Mallows posterior can be obtained, compared to not introducing the variations.
+As $N$ is limited, $\bm{\rho}^0$ and therefore, $\mathcal{V}_{\bm{\rho}^0}$ usually cannot be accurately inferred from the data. We can however, sample for $i_1, ..., i_n$ by sampling for each item $i$ from a univariate Gaussian distribution centeredd on $\hat{v}_i$ with a fixed variance $\sigma$ for all items, and then obtain a ranking using the rank function. By introducing the variance, a smaller KL divergence from the Mallows posterior can be achieved.
  
 \subsection{ }
 \begin{theorem}
@@ -197,17 +199,17 @@ With the usage of  $g'(i_1, ...,i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma)$, t
  $
 \sigma = \left \{
 \begin{aligned}
-&0, && \text{if } \delta(\alpha,n,N)\leq \delta ^{*} \\
-&f(\alpha, n,N), && \text{otherwise}
+&0, && \text{if } \delta(\alpha^0,n,N)\leq \delta ^{*} \\
+&f(\alpha^0, n,N), && \text{otherwise}
 \end{aligned} \right.
 $
 \end{theorem}
 
-In other words, $\sigma$ should be 0 when $\delta(\alpha,n,N) \geq \delta^*$. Beyond this point, the optimal choice of $\sigma$ should be greater than 0, and it follows a function $f(\alpha,n,N)$.
+In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \geq \delta^*$. Beyond this point, the optimal choice of $\sigma$ should be greater than 0, and it follows a function $f(\alpha^0,n,N)$.
 
 \subsection{ }
 \begin{theorem}
-	As $N \rightarrow \infty,\sigma = 0$  $ \forall \alpha >0, n\geq 1$
+	As $N \rightarrow \infty,\sigma = 0$  $ \forall \alpha >0$ and $\geq 1$
 \end{theorem}
 
 
