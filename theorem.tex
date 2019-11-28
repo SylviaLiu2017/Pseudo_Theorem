@@ -102,7 +102,7 @@
 
 \section{Theorems and Lemmas}
 \subsection{ }
-\begin{lemma}
+\begin{lemma} \label{lem:nocross}
 Given there are odd number of items, i.e. $n = 2m - 1$. $\forall \alpha^0 \in (0, \infty)$,
 
 	\begin{enumerate} 
@@ -119,20 +119,20 @@ Note that for both cases, it satisfies that $\forall 1\leq j<k\leq n$ and $\fora
 {$\mathbb{E}[R_{o^0_j}|\bm{\rho}^0, \alpha^0]<\mathbb{E}[R_{o^0_k}|\bm{\rho}^0, \alpha^0]$}
 \end{lemma}
 
-\begin{lemma}
+\begin{lemma}\label{lem:largenumbers}
  As $N \rightarrow \infty$, $\frac{1}{N}\sum\limits_{j=1}^{N}R^j_i \rightarrow \mathbb{E}[R_i|\bm{\rho}^0, \alpha ^0]$, $\forall i = 1, ..., n$
 \end{lemma}
 
 \begin{mydef}
 Given a vector of length $n$, i.e. \{$x_1, ..., x_n$\},the function $rank(x_1, ..., x_n)$ is defined as $rank(x_1, ..., x_n) = \{r_1, ..., r_n\}$ such that $x_{(r_k)} = x_k$, $\forall k = 1, ..., n$
 \end{mydef} 
-\begin{theorem}
+\begin{theorem}\label{theorem:inferrho}
 As $N \rightarrow \infty$, and $\forall \alpha > 0$, \\ $rank({1\over N}\sum\limits_{j=0}^{N}R_1^j,...,{1\over N}\sum\limits_{j=0}^{N}R_n^j) \rightarrow rank(\mathbb{E}[{R}_1|\bm{\rho}^0, \alpha_0],...,\mathbb{E}[{R}_n|\bm{\rho}^0, \alpha_0]) =\bm{\rho}^0 $
 \end{theorem}
 
 To rephrase, as $N$ approaches infinity, the Mallows consensus parameter $\bm{\rho}^0$ can be inferred from the data by taking the marginal mean for each item and then apply the rank function to these marginal means.
 \subsection{ }
-\begin{theorem}
+\begin{theorem}\label{theorem:V}
 	For a function $g$ defined on $\mathcal{P}_n$ which can depend on $\bm{\rho}^0$, for any $n$,
 
  $\operatorname*{arg\,min}\limits_{g\in\mathcal{D}_{\bm{\rho}^0}}\lim\limits_{N \rightarrow \infty} KL (P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g(i_1,...,i_n|\bm{\rho}^0)$ \\
@@ -167,7 +167,7 @@ That is to say, for a set of distributions $g$, which are defined on the space o
 \subsection{ }
 For a given $N < \infty$, define $\hat{\bm{\rho}}^0$ as $rank({1\over N}\sum\limits_{j=0}^{N}R_1^j, ..., {1\over N}\sum\limits_{j=0}^{N}R_n^j)$ and  $\mathcal{V}_{\hat{\bm{\rho}}^0} = f_v(\hat{\bm{\rho}}^0)$. 
 
-\begin{theorem}
+\begin{theorem} \label{theorem:gaussiannoise}
 
 $\exists\sigma \geq 0$ and $g'(i_1, ..., i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma)$ such that 
 
@@ -210,9 +210,14 @@ In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \geq \delta^*$. 
 
 \subsection{ }
 \begin{theorem}
-	As $N \rightarrow \infty,\sigma = 0$  $ \forall \alpha >0$ and $\geq 1$
+	As $N \rightarrow \infty,\sigma = 0$  $ \forall \alpha >0$ and $n \geq 1$
 \end{theorem}
 
-
-
+\section{Evidence and proofs}
+\subsection{Evidence for Theorem \ref{theorem:gaussiannoise}}
+In \textbf{Figure} \ref{fig:KL_Sigma}, for each subfigure, we calculate and plot the KL-divergences between the Mallows posterior and the pseudo-likelihood, computed with different choices of $\sigma$. The left-most point on each sub-figure corresponds to the KL-divergence when no Gausian variation is introduced, i.e. $\sigma = 0$. It can be observed that for most situations shown in the figure, the lowest KL-divergence is achieved when some level of Gaussian variation is introduced, especially as $N$ and $\alpha^0$ are relatively small. However, as $N$ and $\alpha^0$ increase, the optimal $\sigma$ appears to decrease towards 0. 
+\begin{figure}[h]\label{fig:KL_Sigma}
+	\includegraphics[width=\linewidth]{figures/9Figurescombined_sharex_n10.pdf}
+	\caption{x-axis: $\sigma$, y-axis: KL-divergence between the Mallows posterior and the pseudo-likelihood}
+\end{figure}
 \end{document}  
