@@ -14,7 +14,7 @@
 \usepackage{bbm}
 \usepackage{bbold}
 \usepackage[T1]{fontenc}
-
+\usepackage{subfigure}
 \usepackage[english]{babel}
 \newtheorem{theorem}{Theorem}[subsection]
 \newtheorem{corollary}{Corollary}[theorem]
@@ -195,7 +195,7 @@ $\exists\sigma \geq 0$ and $g'(i_1, ..., i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \s
 As $N$ is limited, $\bm{\rho}^0$ and therefore, $\mathcal{V}_{\bm{\rho}^0}$ usually cannot be accurately inferred from the data. We can however, sample for $i_1, ..., i_n$ by sampling for each item $i$ from a univariate Gaussian distribution centeredd on $\hat{v}_i$ with a fixed variance $\sigma$ for all items, and then obtain a ranking using the rank function. By introducing the variance, a smaller KL divergence from the Mallows posterior can be achieved.
  
 \subsection{ }
-\begin{theorem}
+\begin{theorem}\label{theorem:sigmafunction}
 With the usage of  $g'(i_1, ...,i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma)$, the value of $\sigma$ that minimizes the KL-divergence between the Mallows posterior and the resulted pseudolikelihood is\\
  $
 \sigma = \left \{
@@ -220,4 +220,18 @@ In \textbf{Figure} \ref{fig:KL_Sigma}, for each subfigure, we calculate and plot
 	\includegraphics[width=\linewidth]{figures/9Figurescombined_sharex_n10.pdf}
 	\caption{x-axis: $\sigma$, y-axis: KL-divergence between the Mallows posterior and the pseudo-likelihood}
 \end{figure}
+\subsection{Evidence for Theorem \ref{theorem:sigmafunction}}
+
+\subsubsection{Optimal $\sigma$ is determined by $N, n, \alpha^0$}
+In \textbf{Figure} \ref{fig:sigmafunction}, each row of 3 figures shows a comparison of the optimal $\sigma$ when one of the variables ($N$, $n$, $\alpha$) changes. It can be observed that all three variables have an impact on the optimal value of $\sigma$. More specifically, the optimal choice of $\sigma$ appear to decrease as $N$ and $\alpha^0$ increase, and as $n$ decreases.
+\begin{figure}[h]\label{fig:sigmafunction}
+	\subfigure[]{
+	\includegraphics[width=\linewidth]{figures/diff_N_users.pdf}\label{fig_diff_user}}
+	\subfigure[]{
+	\includegraphics[width=\linewidth]{figures/diff_n.pdf}\label{fig_diff_n}}
+	\subfigure[]{
+	\includegraphics[width=\linewidth]{figures/diff_alpha.pdf}\label{fig_diff_alpha}}
+	
+\end{figure}
+
 \end{document}  

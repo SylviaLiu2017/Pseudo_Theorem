@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.16)  28 NOV 2019 14:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.16)  28 NOV 2019 16:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -210,6 +210,26 @@ Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
 File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip46
+\subfigcapskip=\skip47
+\subfigcaptopadj=\dimen122
+\subfigbottomskip=\skip48
+\subfigcapmargin=\dimen123
+\subfiglabelskip=\skip49
+\c@subfigure=\count104
+\c@lofdepth=\count105
+\c@subtable=\count106
+\c@lotdepth=\count107
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2019/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip50
+\subfig@bottom=\skip51
+)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2019/05/04 3.31 The Babel package
 
@@ -221,19 +241,19 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2019/05/04 3.31 Babel common definitions
-\babel@savecnt=\count104
-\U@D=\dimen122
+\babel@savecnt=\count108
+\U@D=\dimen124
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@dirlevel=\count105
+\bbl@dirlevel=\count109
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
-\c@theorem=\count106
-\c@corollary=\count107
-\c@mydef=\count108
+\c@theorem=\count110
+\c@corollary=\count111
+\c@mydef=\count112
 
 (./theorem.aux)
 \openout1 = `theorem.aux'.
@@ -287,16 +307,16 @@ LaTeX Font Info:    ... okay on input line 33.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count109
-\scratchdimen=\dimen123
+\scratchcounter=\count113
+\scratchdimen=\dimen125
 \scratchbox=\box29
-\nofMPsegments=\count110
-\nofMParguments=\count111
+\nofMPsegments=\count114
+\nofMParguments=\count115
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count112
-\MPscratchDim=\dimen124
-\MPnumerator=\count113
-\makeMPintoPDFobject=\count114
+\MPscratchCnt=\count116
+\MPscratchDim=\dimen126
+\MPnumerator=\count117
+\makeMPintoPDFobject=\count118
 \everyMPtoPDFconversion=\toks23
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -433,43 +453,85 @@ Package pdftex.def Info: figures/9Figurescombined_sharex_n10.pdf  used on input
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[4] [5 <./figures/9Figurescombined_sharex_n10.pdf>] (./theorem.aux) ) 
+<figures/diff_N_users.pdf, id=35, 1084.05pt x 361.35pt>
+File: figures/diff_N_users.pdf Graphic file (type pdf)
+<use figures/diff_N_users.pdf>
+Package pdftex.def Info: figures/diff_N_users.pdf  used on input line 229.
+(pdftex.def)             Requested size: 430.00462pt x 143.33543pt.
+<figures/diff_n.pdf, id=36, 1084.05pt x 361.35pt>
+File: figures/diff_n.pdf Graphic file (type pdf)
+<use figures/diff_n.pdf>
+Package pdftex.def Info: figures/diff_n.pdf  used on input line 231.
+(pdftex.def)             Requested size: 430.00462pt x 143.33543pt.
+<figures/diff_alpha.pdf, id=37, 1084.05pt x 361.35pt>
+File: figures/diff_alpha.pdf Graphic file (type pdf)
+<use figures/diff_alpha.pdf>
+Package pdftex.def Info: figures/diff_alpha.pdf  used on input line 233.
+(pdftex.def)             Requested size: 430.00462pt x 143.33543pt.
+
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 229--234
+[][]
+ []
+
+
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 229--234
+[]
+ []
+
+
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 229--234
+[] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4] [5 <./figures/9Figurescombined_sharex_n10.pdf>] [6 <./figures/diff_N_users.
+pdf> <./figures/diff_n.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/diff_n.pdf): PDF i
+nclusion: multiple pdfs with page group included in a single page
+> <./figures/diff_alpha.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/diff_alpha.pdf): P
+DF inclusion: multiple pdfs with page group included in a single page
+>] (./theorem.aux) ) 
 Here is how much of TeX's memory you used:
- 4560 strings out of 492616
- 59303 string characters out of 6129481
- 153753 words of memory out of 5000000
- 8365 multiletter control sequences out of 15000+600000
- 23074 words of font info for 65 fonts, out of 8000000 for 9000
+ 4745 strings out of 492616
+ 62144 string characters out of 6129481
+ 155658 words of memory out of 5000000
+ 8540 multiletter control sequences out of 15000+600000
+ 23839 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,15n,35p,885b,277s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/loca
-l/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/
-texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/
-texlive/2019/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/local/t
-exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local
-/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/
-texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/local/
-texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/lo
-cal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
-exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
-019/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/201
-9/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2019/
-texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2019/te
-xmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2019/texm
-f-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2019/texmf-
-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on theorem.pdf (5 pages, 290275 bytes).
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-supe
+r/cm-super-t1.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-
+type1/bbold10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/bbold-
+type1/bbold7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
+/cmextra/cmex8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
+mextra/cmmib6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfon
+ts/cmextra/cmmib8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx10
+95.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200
+.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.p
+fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb
+></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb><
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
+Output written on theorem.pdf (6 pages, 331094 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
+ 252 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
