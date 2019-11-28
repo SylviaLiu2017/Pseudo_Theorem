@@ -50,7 +50,8 @@
 	\item {$\bm{R}^1,...,\bm{R}^N$: full rankings given by the users}
 	
 	
-	\item {$\bm{R}^j \in \mathcal{P}_n$= \{$R^j_1,...,R^j_n$\} $\sim$ Mallows($\bm{\rho}^0, \alpha^0$)}
+	\item {$\bm{R}^j \in \mathcal{P}_n$= \{$R^j_1,...,R^j_n$\} $\sim$ Mallows($\bm{\rho}^0, \alpha^0$), defined as 
+	$P(\bm{R}^j|\alpha^0, \bm{\rho}^0) = \frac{\text{exp}\{-\frac{\alpha^0}{n}d(\bm{R}^j, \bm{\rho}^0)\}}{\sum\limits_{\bm{r}\in \mathcal{P}_n}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{R}^j, \bm{\rho}^0)\}}$}
 	
 	
 	\item {$P(\bm{\rho}|\bm{R}^1,...,\bm{R}^N,\alpha^o)$: Mallows posterior}
@@ -61,7 +62,7 @@
 	\item{ \{$o_1, ..., o_n$\}: an ordering of $n$ items that corresponds to \{$i_1, ..., i_n$\} s.t. $i_{o_k} = k$ }. $\{o_1, ...,o_n\}$ and \{$i_1, ..., i_n$\} have a one-to-one relationship
 	
 	%pseudo components 
-	\item {$\sum\limits_{\{i_1, ..., i_n \}\in \mathcal{P}_n }q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha_0, \bm{R}^1, ...,\bm{R}^N) \cdot g(i_1, ..., i_n| \dots)$ : pseudolikelihood that approximates the Mallows posterior}
+	\item {$Q(\tilde{\bm{\rho}}|\cdot)$=$\sum\limits_{\{i_1, ..., i_n \}\in \mathcal{P}_n }q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha_0, \bm{R}^1, ...,\bm{R}^N) \cdot g(i_1, ..., i_n| \dots)$ : pseudolikelihood that approximates the Mallows posterior}
 	
 	\item {$q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha^0, \bm{R}^1, ..., \bm{R}^N)  = q(\tilde{\bm{\rho}}|o_1, ..., o_n, \alpha^0, \bm{R}^1, ..., \bm{R}^N)  \\
 		=q(\tilde{\rho}_{o_1}|\alpha^0,o_1, R^1_{o_1},...,R^N_{o_1}) \cdot
@@ -132,7 +133,7 @@ As $N \rightarrow \infty$, and $\forall \alpha > 0$, \\ $rank({1\over N}\sum\lim
 To rephrase, as $N$ approaches infinity, the Mallows consensus parameter $\bm{\rho}^0$ can be inferred from the data by taking the marginal mean for each item and then apply the rank function to these marginal means.
 \subsection{ }
 \begin{theorem}
-	For a function $g$ defined on $\mathcal{P}_n$ which can depend on $\bm{\rho}^0$, 
+	For a function $g$ defined on $\mathcal{P}_n$ which can depend on $\bm{\rho}^0$, for any $n$,
 
  $\operatorname*{arg\,min}\limits_{g\in\mathcal{D}_{\bm{\rho}^0}}\lim\limits_{N \rightarrow \infty} KL (P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g(i_1,...,i_n|\bm{\rho}^0)$ \\
 = $g^*(i_1,...,i_n|\mathcal{V}_{{\bm{\rho}}^0})$, \\ 
