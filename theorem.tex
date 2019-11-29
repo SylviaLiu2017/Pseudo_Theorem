@@ -215,23 +215,41 @@ In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \geq \delta^*$. 
 
 \section{Evidence and proofs}
 \subsection{Evidence for Theorem \ref{theorem:gaussiannoise}}
-In \textbf{Figure} \ref{fig:KL_Sigma}, for each subfigure, we calculate and plot the KL-divergences between the Mallows posterior and the pseudo-likelihood, computed with different choices of $\sigma$. The left-most point on each sub-figure corresponds to the KL-divergence when no Gausian variation is introduced, i.e. $\sigma = 0$. It can be observed that for most situations shown in the figure, the lowest KL-divergence is achieved when some level of Gaussian variation is introduced, especially as $N$ and $\alpha^0$ are relatively small. However, as $N$ and $\alpha^0$ increase, the optimal $\sigma$ appears to decrease towards 0. 
-\begin{figure}[h]\label{fig:KL_Sigma}
-	\includegraphics[width=\linewidth]{figures/9Figurescombined_sharex_n10.pdf}
-	\caption{x-axis: $\sigma$, y-axis: KL-divergence between the Mallows posterior and the pseudo-likelihood}
-\end{figure}
+In \textbf{Figure} \ref{fig:sigmafunction}, for each subfigure, we calculate and plot the KL-divergences between the Mallows posterior and the pseudo-likelihood, computed with different choices of $\sigma$. The left-most point on each sub-figure corresponds to the KL-divergence when no Gausian variation is introduced, i.e. $\sigma = 0$. It can be observed that for most situations shown in the figure, the lowest KL-divergence is achieved when some level of Gaussian variation is introduced, especially as $N$ and $\alpha^0$ are relatively small. However, as $N$ and $\alpha^0$ increase, the optimal $\sigma$ appears to decrease towards 0. 
+
 \subsection{Evidence for Theorem \ref{theorem:sigmafunction}}
 
 \subsubsection{Optimal $\sigma$ is determined by $N, n, \alpha^0$}
-In \textbf{Figure} \ref{fig:sigmafunction}, each row of 3 figures shows a comparison of the optimal $\sigma$ when one of the variables ($N$, $n$, $\alpha$) changes. It can be observed that all three variables have an impact on the optimal value of $\sigma$. More specifically, the optimal choice of $\sigma$ appear to decrease as $N$ and $\alpha^0$ increase, and as $n$ decreases.
-\begin{figure}[h]\label{fig:sigmafunction}
+As shown in \textbf{Figure} \ref{fig:sigmafunction}, in each subfigure, the $\sigma$ value that corresponds to the lowest KL-divergence is the optimal $\sigma$ for its specific ($N, n, \alpha^0$) set up. Each row of 3 figures shows a comparison of the optimal $\sigma$ when one of the variables ($N$, $n$, $\alpha$) changes. It can be observed that all three variables have an impact on the optimal value of $\sigma$. More specifically, the optimal choice of $\sigma$ appear to decrease as $N$ and $\alpha^0$ increase, and as $n$ decreases.
+\begin{figure}[h!]\label{fig:sigmafunction}
 	\subfigure[]{
 	\includegraphics[width=\linewidth]{figures/diff_N_users.pdf}\label{fig_diff_user}}
 	\subfigure[]{
 	\includegraphics[width=\linewidth]{figures/diff_n.pdf}\label{fig_diff_n}}
 	\subfigure[]{
 	\includegraphics[width=\linewidth]{figures/diff_alpha.pdf}\label{fig_diff_alpha}}
+\caption{x-axis: $\sigma$, y-axis: KL-divergence}
 	
+\end{figure}
+
+For each $N$, $n$ and $\alpha^0$, we simulate 10 datasets, and for each dataset, a grid of $\sigma$ values are tried out. In \textbf{Figure }\ref{fig:optimSigma}, we plot $\alpha^0$ on the x-axis, and its corresponded optimal $\sigma$ on the y-axis. It can be observed that when $\alpha^0$ and $N$ are large, and $n$ is small, all $\sigma$ values result in small KL-divergence. To simplify, in these situations, we can safely set $\sigma = 0$ to achieve small KL-divergence. As $N$ and $\alpha^0$ decreases and as $n$ increases, optimal $\sigma$ increases.
+\begin{figure}[h!]\label{fig:optimSigma}
+		\subfigure[]{
+		\includegraphics[width=\linewidth]{figures/2_4_sameN200diffn.pdf}\label{fig_optimSigma_diff_n}}
+		\subfigure[]{
+		\includegraphics[width=\linewidth]{figures/2_4_samen10diffN.pdf}\label{fig_optimSigma_diff_N}}
+		\caption{x-axis: $\alpha^0$, y-axis: optimal $\sigma$}
+\end{figure}
+
+\subsection{using data standard deviation / n as a proxy for $\alpha^0$}
+Under most situations, the value of $\alpha^0$ is unknown, however, we can compute the marginal standard deviation of each item from the data, and normalize it by deviding it by n. The trend demonstrated in \textbf{Figure }\ref{fig:optimSigma} is well-preserved, as shown in \textbf{Figure }\ref{fig:optimSigma_sd_data}.
+
+\begin{figure}[h!]\label{fig:optimSigma_sd_data}
+	\subfigure[]{
+		\includegraphics[width=\linewidth]{figures/2_4_sd_data_sameN200diffn.pdf}\label{fig_optimSigma_diff_n_sd_data}}
+	\subfigure[]{
+		\includegraphics[width=\linewidth]{figures/2_4_sd_data_samen10diffN.pdf}\label{fig_optimSigma_diff_N_sd_data}}
+	\caption{x-axis: $\alpha^0$, y-axis: optimal $\sigma$}
 \end{figure}
 
 \end{document}  
