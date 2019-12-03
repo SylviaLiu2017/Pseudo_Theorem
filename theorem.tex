@@ -217,6 +217,47 @@ In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \geq \delta^*$. 
 \subsection{Evidence for Theorem \ref{theorem:gaussiannoise}}
 In \textbf{Figure} \ref{fig:sigmafunction}, for each subfigure, we calculate and plot the KL-divergences between the Mallows posterior and the pseudo-likelihood, computed with different choices of $\sigma$. The left-most point on each sub-figure corresponds to the KL-divergence when no Gausian variation is introduced, i.e. $\sigma = 0$. It can be observed that for most situations shown in the figure, the lowest KL-divergence is achieved when some level of Gaussian variation is introduced, especially as $N$ and $\alpha^0$ are relatively small. However, as $N$ and $\alpha^0$ increase, the optimal $\sigma$ appears to decrease towards 0. 
 
+\begin{figure}[h!]
+		\subfigure[]{
+		\begin{minipage}[t]{.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/Mallows_alpha1N200n10run1.pdf}
+		
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/Pseudo_alpha1N200n10run1.pdf}
+
+	\end{minipage}  }
+\subfigure[]{
+
+	\begin{minipage}[t]{.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/Mallows_alpha1dot5N200n10run1.pdf}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/Pseudo_alpha1dot5N200n10run1.pdf}
+	\end{minipage}  
+
+}
+\subfigure[]{	
+	\begin{minipage}[t]{.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/Mallows_alpha2N200n10run1.pdf}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/Pseudo_alpha2N200n10run1.pdf}
+	\end{minipage}  
+	
+}
+	
+\caption{left column: Mallows, right column: pseudolikelihoods. $N = 200, n = 10$, $\alpha^0 = 1, 1.5, 2$ respectively, from top to bottom}
+\end{figure}\label{fig:heatPlot_comparison}
 \subsection{Evidence for Theorem \ref{theorem:sigmafunction}}
 
 \subsubsection{Optimal $\sigma$ is determined by $N, n, \alpha^0$}
