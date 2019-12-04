@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.16)  4 DEC 2019 17:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.16)  4 DEC 2019 20:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -449,22 +449,22 @@ File: figures/theorem2_2/N2000n10alpha1.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/theorem2_2/N2000n10alpha1.pdf  used on input l
 ine 234.
 (pdftex.def)             Requested size: 193.50076pt x 128.99968pt.
-<figures/theorem2_2/N2000n20alpha2.pdf, id=38, 1084.05pt x 722.7pt>
-File: figures/theorem2_2/N2000n20alpha2.pdf Graphic file (type pdf)
-<use figures/theorem2_2/N2000n20alpha2.pdf>
-Package pdftex.def Info: figures/theorem2_2/N2000n20alpha2.pdf  used on input l
+<figures/theorem2_2/N2000n20alpha3.pdf, id=38, 1084.05pt x 722.7pt>
+File: figures/theorem2_2/N2000n20alpha3.pdf Graphic file (type pdf)
+<use figures/theorem2_2/N2000n20alpha3.pdf>
+Package pdftex.def Info: figures/theorem2_2/N2000n20alpha3.pdf  used on input l
 ine 240.
 (pdftex.def)             Requested size: 193.50076pt x 128.99968pt.
-<figures/theorem2_2/N2000n30alpha5.pdf, id=39, 1084.05pt x 722.7pt>
-File: figures/theorem2_2/N2000n30alpha5.pdf Graphic file (type pdf)
-<use figures/theorem2_2/N2000n30alpha5.pdf>
-Package pdftex.def Info: figures/theorem2_2/N2000n30alpha5.pdf  used on input l
+<figures/theorem2_2/N2000n30alpha7.pdf, id=39, 1084.05pt x 722.7pt>
+File: figures/theorem2_2/N2000n30alpha7.pdf Graphic file (type pdf)
+<use figures/theorem2_2/N2000n30alpha7.pdf>
+Package pdftex.def Info: figures/theorem2_2/N2000n30alpha7.pdf  used on input l
 ine 248.
 (pdftex.def)             Requested size: 193.50076pt x 128.99968pt.
-<figures/theorem2_2/N2000n50alpha10.pdf, id=40, 1084.05pt x 722.7pt>
-File: figures/theorem2_2/N2000n50alpha10.pdf Graphic file (type pdf)
-<use figures/theorem2_2/N2000n50alpha10.pdf>
-Package pdftex.def Info: figures/theorem2_2/N2000n50alpha10.pdf  used on input 
+<figures/theorem2_2/N2000n50alpha15.pdf, id=40, 1084.05pt x 722.7pt>
+File: figures/theorem2_2/N2000n50alpha15.pdf Graphic file (type pdf)
+<use figures/theorem2_2/N2000n50alpha15.pdf>
+Package pdftex.def Info: figures/theorem2_2/N2000n50alpha15.pdf  used on input 
 line 254.
 (pdftex.def)             Requested size: 193.50076pt x 128.99968pt.
 <figures/theorem2_2/heat_Mallows_N2000n10alpha1run1.pdf, id=41, 505.89pt x 505.
@@ -502,90 +502,93 @@ Package pdftex.def Info: figures/theorem2_2/heat_uniform_N2000n10alpha1run1.pdf
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [5 <./figures/theorem2_2/N2000n10alpha1.pdf> <./figures/theorem2_2/N2000n20alph
-a2.pdf
+a3.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/theorem2_2/N2000n2
-0alpha2.pdf): PDF inclusion: multiple pdfs with page group included in a single
+0alpha3.pdf): PDF inclusion: multiple pdfs with page group included in a single
  page
-> <./figures/theorem2_2/N2000n30alpha5.pdf
+> <./figures/theorem2_2/N2000n30alpha7.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/theorem2_2/N2000n3
-0alpha5.pdf): PDF inclusion: multiple pdfs with page group included in a single
+0alpha7.pdf): PDF inclusion: multiple pdfs with page group included in a single
  page
-> <./figures/theorem2_2/N2000n50alpha10.pdf
+> <./figures/theorem2_2/N2000n50alpha15.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/theorem2_2/N2000n5
-0alpha10.pdf): PDF inclusion: multiple pdfs with page group included in a singl
+0alpha15.pdf): PDF inclusion: multiple pdfs with page group included in a singl
 e page
 >]
-<figures/Mallows_alpha1N100n10run1.pdf, id=201, 505.89pt x 505.89pt>
+<figures/Mallows_alpha1N100n10run1.pdf, id=205, 505.89pt x 505.89pt>
 File: figures/Mallows_alpha1N100n10run1.pdf Graphic file (type pdf)
 <use figures/Mallows_alpha1N100n10run1.pdf>
 Package pdftex.def Info: figures/Mallows_alpha1N100n10run1.pdf  used on input l
 ine 320.
 (pdftex.def)             Requested size: 129.00269pt x 129.00409pt.
-<figures/Pseudo_alpha1N100n100run1sd0.pdf, id=202, 505.89pt x 505.89pt>
+<figures/Pseudo_alpha1N100n100run1sd0.pdf, id=206, 505.89pt x 505.89pt>
 File: figures/Pseudo_alpha1N100n100run1sd0.pdf Graphic file (type pdf)
 <use figures/Pseudo_alpha1N100n100run1sd0.pdf>
 Package pdftex.def Info: figures/Pseudo_alpha1N100n100run1sd0.pdf  used on inpu
 t line 320.
 (pdftex.def)             Requested size: 129.00269pt x 129.00409pt.
-<figures/Pseudo_alpha1N100n100run1sd2dot25.pdf, id=203, 505.89pt x 505.89pt>
+<figures/Pseudo_alpha1N100n100run1sd2dot25.pdf, id=207, 505.89pt x 505.89pt>
 File: figures/Pseudo_alpha1N100n100run1sd2dot25.pdf Graphic file (type pdf)
 <use figures/Pseudo_alpha1N100n100run1sd2dot25.pdf>
 Package pdftex.def Info: figures/Pseudo_alpha1N100n100run1sd2dot25.pdf  used on
  input line 320.
 (pdftex.def)             Requested size: 129.00269pt x 129.00409pt.
-<figures/Mallows_alpha1dot5N100n10run1.pdf, id=204, 505.89pt x 505.89pt>
+<figures/Mallows_alpha1dot5N100n10run1.pdf, id=208, 505.89pt x 505.89pt>
 File: figures/Mallows_alpha1dot5N100n10run1.pdf Graphic file (type pdf)
 <use figures/Mallows_alpha1dot5N100n10run1.pdf>
 Package pdftex.def Info: figures/Mallows_alpha1dot5N100n10run1.pdf  used on inp
 ut line 342.
 (pdftex.def)             Requested size: 129.00269pt x 129.00409pt.
-<figures/Pseudo_alpha1dot5N100n100run1sd0.pdf, id=205, 505.89pt x 505.89pt>
+<figures/Pseudo_alpha1dot5N100n100run1sd0.pdf, id=209, 505.89pt x 505.89pt>
 File: figures/Pseudo_alpha1dot5N100n100run1sd0.pdf Graphic file (type pdf)
 <use figures/Pseudo_alpha1dot5N100n100run1sd0.pdf>
 Package pdftex.def Info: figures/Pseudo_alpha1dot5N100n100run1sd0.pdf  used on 
 input line 342.
 (pdftex.def)             Requested size: 129.00269pt x 129.00409pt.
-File: figures/Pseudo_alpha1N100n100run1sd2dot25.pdf Graphic file (type pdf)
-<use figures/Pseudo_alpha1N100n100run1sd2dot25.pdf>
-Package pdftex.def Info: figures/Pseudo_alpha1N100n100run1sd2dot25.pdf  used on
- input line 342.
+<figures/Pseudo_alpha1dot5N100n100run1sd1dot65.pdf, id=210, 505.89pt x 505.89pt
+>
+File: figures/Pseudo_alpha1dot5N100n100run1sd1dot65.pdf Graphic file (type pdf)
+
+<use figures/Pseudo_alpha1dot5N100n100run1sd1dot65.pdf>
+Package pdftex.def Info: figures/Pseudo_alpha1dot5N100n100run1sd1dot65.pdf  use
+d on input line 342.
 (pdftex.def)             Requested size: 129.00269pt x 129.00409pt.
-<figures/Mallows_alpha2N100n10run1.pdf, id=206, 505.89pt x 505.89pt>
+<figures/Mallows_alpha2N100n10run1.pdf, id=211, 505.89pt x 505.89pt>
 File: figures/Mallows_alpha2N100n10run1.pdf Graphic file (type pdf)
 <use figures/Mallows_alpha2N100n10run1.pdf>
 Package pdftex.def Info: figures/Mallows_alpha2N100n10run1.pdf  used on input l
 ine 363.
 (pdftex.def)             Requested size: 129.00269pt x 129.00409pt.
-<figures/Pseudo_alpha2N100n100run1sd0.pdf, id=207, 505.89pt x 505.89pt>
+<figures/Pseudo_alpha2N100n100run1sd0.pdf, id=212, 505.89pt x 505.89pt>
 File: figures/Pseudo_alpha2N100n100run1sd0.pdf Graphic file (type pdf)
 <use figures/Pseudo_alpha2N100n100run1sd0.pdf>
 Package pdftex.def Info: figures/Pseudo_alpha2N100n100run1sd0.pdf  used on inpu
 t line 363.
 (pdftex.def)             Requested size: 129.00269pt x 129.00409pt.
-<figures/Pseudo_alpha2N100n100run1sd0dot75.pdf, id=208, 505.89pt x 505.89pt>
+<figures/Pseudo_alpha2N100n100run1sd0dot75.pdf, id=213, 505.89pt x 505.89pt>
 File: figures/Pseudo_alpha2N100n100run1sd0dot75.pdf Graphic file (type pdf)
 <use figures/Pseudo_alpha2N100n100run1sd0dot75.pdf>
 Package pdftex.def Info: figures/Pseudo_alpha2N100n100run1sd0dot75.pdf  used on
  input line 363.
 (pdftex.def)             Requested size: 129.00269pt x 129.00409pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<figures/diff_N_users.pdf, id=209, 1084.05pt x 361.35pt>
+ [6 <./figures/theorem2_2/heat_Mallows_N2000n10alpha1run1.pdf> <./figures/theor
+em2_2/heat_V_N2000n10alpha1run1.pdf> <./figures/theorem2_2/heat_low_std_swap_N2
+000n10alpha1run1.pdf> <./figures/theorem2_2/heat_uniform_N2000n10alpha1run1.pdf
+>]
+<figures/diff_N_users.pdf, id=241, 1084.05pt x 361.35pt>
 File: figures/diff_N_users.pdf Graphic file (type pdf)
 <use figures/diff_N_users.pdf>
 Package pdftex.def Info: figures/diff_N_users.pdf  used on input line 375.
 (pdftex.def)             Requested size: 430.00462pt x 143.33543pt.
-<figures/diff_n.pdf, id=210, 1084.05pt x 361.35pt>
+<figures/diff_n.pdf, id=242, 1084.05pt x 361.35pt>
 File: figures/diff_n.pdf Graphic file (type pdf)
 <use figures/diff_n.pdf>
 Package pdftex.def Info: figures/diff_n.pdf  used on input line 377.
 (pdftex.def)             Requested size: 430.00462pt x 143.33543pt.
-<figures/diff_alpha.pdf, id=211, 1084.05pt x 361.35pt>
+<figures/diff_alpha.pdf, id=243, 1084.05pt x 361.35pt>
 File: figures/diff_alpha.pdf Graphic file (type pdf)
 <use figures/diff_alpha.pdf>
 Package pdftex.def Info: figures/diff_alpha.pdf  used on input line 379.
@@ -605,28 +608,22 @@ Overfull \hbox (3.63054pt too wide) in paragraph at lines 375--380
 [] 
  []
 
-[6 <./figures/theorem2_2/heat_Mallows_N2000n10alpha1run1.pdf> <./figures/theore
-m2_2/heat_V_N2000n10alpha1run1.pdf> <./figures/theorem2_2/heat_low_std_swap_N20
-00n10alpha1run1.pdf> <./figures/theorem2_2/heat_uniform_N2000n10alpha1run1.pdf>
-]
-Overfull \vbox (34.89499pt too high) has occurred while \output is active []
-
-
 [7 <./figures/Mallows_alpha1N100n10run1.pdf> <./figures/Pseudo_alpha1N100n100ru
 n1sd0.pdf> <./figures/Pseudo_alpha1N100n100run1sd2dot25.pdf> <./figures/Mallows
 _alpha1dot5N100n10run1.pdf> <./figures/Pseudo_alpha1dot5N100n100run1sd0.pdf> <.
-/figures/Mallows_alpha2N100n10run1.pdf> <./figures/Pseudo_alpha2N100n100run1sd0
-.pdf> <./figures/Pseudo_alpha2N100n100run1sd0dot75.pdf>]
+/figures/Pseudo_alpha1dot5N100n100run1sd1dot65.pdf> <./figures/Mallows_alpha2N1
+00n10run1.pdf> <./figures/Pseudo_alpha2N100n100run1sd0.pdf> <./figures/Pseudo_a
+lpha2N100n100run1sd0dot75.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/2_4_sameN200diffn.pdf, id=292, 1084.05pt x 361.35pt>
+<figures/2_4_sameN200diffn.pdf, id=303, 1084.05pt x 361.35pt>
 File: figures/2_4_sameN200diffn.pdf Graphic file (type pdf)
 <use figures/2_4_sameN200diffn.pdf>
 Package pdftex.def Info: figures/2_4_sameN200diffn.pdf  used on input line 387.
 
 (pdftex.def)             Requested size: 430.00462pt x 143.33543pt.
-<figures/2_4_samen10diffN.pdf, id=293, 1084.05pt x 361.35pt>
+<figures/2_4_samen10diffN.pdf, id=304, 1084.05pt x 361.35pt>
 File: figures/2_4_samen10diffN.pdf Graphic file (type pdf)
 <use figures/2_4_samen10diffN.pdf>
 Package pdftex.def Info: figures/2_4_samen10diffN.pdf  used on input line 389.
@@ -644,13 +641,13 @@ Overfull \hbox (3.63054pt too wide) in paragraph at lines 387--390
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/2_4_sd_data_sameN200diffn.pdf, id=294, 1084.05pt x 361.35pt>
+<figures/2_4_sd_data_sameN200diffn.pdf, id=305, 1084.05pt x 361.35pt>
 File: figures/2_4_sd_data_sameN200diffn.pdf Graphic file (type pdf)
 <use figures/2_4_sd_data_sameN200diffn.pdf>
 Package pdftex.def Info: figures/2_4_sd_data_sameN200diffn.pdf  used on input l
 ine 399.
 (pdftex.def)             Requested size: 430.00462pt x 143.33543pt.
-<figures/2_4_sd_data_samen10diffN.pdf, id=295, 1084.05pt x 361.35pt>
+<figures/2_4_sd_data_samen10diffN.pdf, id=306, 1084.05pt x 361.35pt>
 File: figures/2_4_sd_data_samen10diffN.pdf Graphic file (type pdf)
 <use figures/2_4_sd_data_samen10diffN.pdf>
 Package pdftex.def Info: figures/2_4_sd_data_samen10diffN.pdf  used on input li
@@ -689,10 +686,10 @@ pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/2_4_sd_data_samen1
 page
 >] (./theorem.aux) ) 
 Here is how much of TeX's memory you used:
- 4853 strings out of 492616
- 66984 string characters out of 6129481
+ 4858 strings out of 492616
+ 67264 string characters out of 6129481
  155782 words of memory out of 5000000
- 8628 multiletter control sequences out of 15000+600000
+ 8632 multiletter control sequences out of 15000+600000
  23839 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,15n,35p,885b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -720,10 +717,10 @@ fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb><
 /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></u
 sr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on theorem.pdf (11 pages, 479787 bytes).
+Output written on theorem.pdf (11 pages, 485371 bytes).
 PDF statistics:
- 621 PDF objects out of 1000 (max. 8388607)
- 243 compressed objects within 3 object streams
+ 632 PDF objects out of 1000 (max. 8388607)
+ 248 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
