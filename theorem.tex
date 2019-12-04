@@ -215,7 +215,7 @@ In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \geq \delta^*$. 
 
 \section{Evidence and proofs}
 \subsection{Evidence for Theorem \ref{theorem:V}}
-In this experiment, we first simulate a dataset of $N$ user and $n$ items with different choices of $alpha^0$ by drawing from the Mallows distribution. We can chosen $N = 2000$ to such that it is sufficiently large such that the the characteristics as $N \rightarrow \infty$ can be simulated.As shown in \textbf{Figure} \ref{fig:boxPlots}, we have selected several different choices of $g$ functions for the pseudolikelihoods, and compare their KL-divergences with the Mallows posterior. We simulate 50 datasets for each scenario. The different $g$ functions are chosen as below:
+In this experiment, we first simulate a dataset of $N$ users and $n$ items with different choices of $\alpha^0$ by drawing from the Mallows distribution.  50 datasets are generated for each scenario. We have chosen $N = 2000$ so that it is sufficiently large and the characteristics as $N \rightarrow \infty$ can be simulated. As shown in \textbf{Figure} \ref{fig:boxPlots}, we have selected several different choices of $g$ functions for the pseudolikelihoods, and we compare their KL-divergences with the Mallows posterior. The different $g$ functions are chosen as below:
 \begin{itemize}
 	\item {V: at iteration, we sample one ranking \{$i_1, ...,i_n$\} from the $g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0}))$}
 	\item {opp\_V: at each iteration, we first sample one V-ranking \{$i_1, ...,i_n$\}, and then for each ranking in the V-ranking, we generate the opposite V-ranking \{$n+1 - i_1, ..., n+1 - i_n$\}}
