@@ -133,11 +133,11 @@ As $N \rightarrow \infty$, and $\forall \alpha > 0$, \\ $rank({1\over N}\sum\lim
 To rephrase, as $N$ approaches infinity, the Mallows consensus parameter $\bm{\rho}^0$ can be inferred from the data by taking the marginal mean for each item and then apply the rank function to these marginal means.
 \subsection{ }
 \begin{theorem}\label{theorem:V}
-	For a function $g$ defined on $\mathcal{P}_n$ which can depend on $\bm{\rho}^0$, for any $n$,
+	For a function $g$ defined on $\mathcal{P}_n$ which can depend on $\bm{\rho}^0$, for any given $n$ and $\alpha^0 > 0$,
 
  $\operatorname*{arg\,min}\limits_{g\in\mathcal{D}_{\bm{\rho}^0}}\lim\limits_{N \rightarrow \infty} KL (P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g(i_1,...,i_n|\bm{\rho}^0)$ \\
 = $g^*(i_1,...,i_n|\mathcal{V}_{{\bm{\rho}}^0})$, \\ 
-where 
+where r
 \begin{itemize}
 	\item{
 		$\mathcal{D}_{\bm{\rho}^0}$ is the set of all distrbutions on $\mathcal{P}_n, \text{which can depend on } \bm{\rho}^0$ 
@@ -214,55 +214,163 @@ In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \geq \delta^*$. 
 \end{theorem}
 
 \section{Evidence and proofs}
+\subsection{Evidence for Theorem \ref{theorem:V}}
+In this experiment, we first simulate a dataset of $N$ user and $n$ items with different choices of $alpha^0$ by drawing from the Mallows distribution. We can chosen $N = 2000$ to such that it is sufficiently large such that the the characteristics as $N \rightarrow \infty$ can be simulated.As shown in \textbf{Figure} \ref{fig:boxPlots}, we have selected several different choices of $g$ functions for the pseudolikelihoods, and compare their KL-divergences with the Mallows posterior. We simulate 50 datasets for each scenario. The different $g$ functions are chosen as below:
+\begin{itemize}
+	\item {V: at iteration, we sample one ranking \{$i_1, ...,i_n$\} from the $g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0}))$}
+	\item {opp\_V: at each iteration, we first sample one V-ranking \{$i_1, ...,i_n$\}, and then for each ranking in the V-ranking, we generate the opposite V-ranking \{$n+1 - i_1, ..., n+1 - i_n$\}}
+	\item {1\_n\_swap: at each iteration, we first fix the ranking to be \{1,2,...,n\}, and then we conduct 5 swapping steps}
+	\item {n\_1\_swap: we first fix the ordering to be \{n, n-1, ...,1\}, and then we conduct 5 swapping steps at each iteration}
+	\item {low\_std\_swap: We first compute each item's standard deviation in the dataset and then rank them in ascending order. Based on this ranking, we conduct 5 swapping steps at each iteration}
+	\item {high\_std\_swap: similar to low\_std\_swap, except that the standard deviations are ranked in descending order}
+	\item{uniform: at each iteration, a ranking is drawn uniformly from $\mathcal{P}_n$}
+\end{itemize}
+
+It can be observed from \textbf{Figure} \ref{fig:boxPlots} that the ``V-rankings'' perform consistently more superior compared to other choices. However, it is noteworthy to mention that in order to show the characteristics of $N \rightarrow \infty$, the requirement of $N$ is larger for the situations when $n$ is large, and/or when $\alpha^0$ is small.
+
+\begin{figure}[h!]
+		\begin{minipage}[t]{.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figures/theorem2_2/N2000n10alpha1.pdf}
+			
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figures/theorem2_2/N2000n20alpha2.pdf}
+			
+		\end{minipage} 
+
+	
+	
+		\begin{minipage}[t]{.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figures/theorem2_2/N2000n30alpha5.pdf}
+			
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figures/theorem2_2/N2000n50alpha10.pdf}
+			
+		\end{minipage} 
+	
+	
+	\caption{Comparison of KL-divergence when different choices of $g(i_1, ...,i_n|\bm{\rho}^0)$ is used. }
+	\label{fig:boxPlots}
+\end{figure}
+
+Some selected heat plots are shown in \textbf{Figure}\ref{fig:heatPlot_comparison_g}. It can be clearly observed that the V-ranking is the optimal choice here. 
+\begin{figure}[h!]
+
+		\begin{minipage}[t]{.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figures/theorem2_2/heat_Mallows_N2000n10alpha1run1.pdf}
+			
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figures/theorem2_2/heat_V_N2000n10alpha1run1.pdf}
+			
+		\end{minipage} 
+		\hfill
+		\begin{minipage}[t]{.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figures/theorem2_2/heat_low_std_swap_N2000n10alpha1run1.pdf}
+			
+		\end{minipage} 
+		\hfill
+		\begin{minipage}[t]{.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figures/theorem2_2/heat_uniform_N2000n10alpha1run1.pdf}
+			
+		\end{minipage} 
+
+	\caption{Comparison of heat plots when different $g$ functions are chosen. $N = 2000, n = 10, \alpha^0 = 1$, run 1}
+	\label{fig:heatPlot_comparison_g}
+\end{figure}
+
+
 \subsection{Evidence for Theorem \ref{theorem:gaussiannoise}}
 In \textbf{Figure} \ref{fig:sigmafunction}, for each subfigure, we calculate and plot the KL-divergences between the Mallows posterior and the pseudo-likelihood, computed with different choices of $\sigma$. The left-most point on each sub-figure corresponds to the KL-divergence when no Gausian variation is introduced, i.e. $\sigma = 0$. It can be observed that for most situations shown in the figure, the lowest KL-divergence is achieved when some level of Gaussian variation is introduced, especially as $N$ and $\alpha^0$ are relatively small. However, as $N$ and $\alpha^0$ increase, the optimal $\sigma$ appears to decrease towards 0. 
 
+\textbf{Figure} \ref{fig:heatPlot_comparison} contains a few heat plot examples. The first column are heat plots of the Mallows posterior, the middle and right columns contain heat plots of the pseudolikelihood with and without Gaussian variations. It can be observed that introducing the Gaussian variation can reduce the KL divergence between the Mallows posterior and the pseudolikelihood.
+
 \begin{figure}[h!]
 		\subfigure[]{
-		\begin{minipage}[t]{.4\textwidth}
+		\begin{minipage}[t]{.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures/Mallows_alpha1N200n10run1.pdf}
+		\includegraphics[width=\textwidth]{figures/Mallows_alpha1N100n10run1.pdf}
 		
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{.4\textwidth}
+	\begin{minipage}[t]{.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures/Pseudo_alpha1N200n10run1.pdf}
+		\includegraphics[width=\textwidth]{figures/Pseudo_alpha1N100n100run1sd0.pdf}
 
-	\end{minipage}  }
+	\end{minipage} 
+	\hfill
+\begin{minipage}[t]{.3\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{figures/Pseudo_alpha1N100n100run1sd2dot25.pdf}
+	
+\end{minipage} 
+
+ }
+
+
+	\subfigure[]{
+		\begin{minipage}[t]{.3\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figures/Mallows_alpha1dot5N100n10run1.pdf}
+			
+		\end{minipage}
+		\hfill
+		\begin{minipage}[t]{.3\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figures/Pseudo_alpha1dot5N100n100run1sd0.pdf}
+			
+		\end{minipage} 
+		\hfill
+		\begin{minipage}[t]{.3\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figures/Pseudo_alpha1N100n100run1sd2dot25.pdf}
+			
+		\end{minipage} 
+		
+	}
+
 \subfigure[]{
-
-	\begin{minipage}[t]{.4\textwidth}
+	\begin{minipage}[t]{.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures/Mallows_alpha1dot5N200n10run1.pdf}
+		\includegraphics[width=\textwidth]{figures/Mallows_alpha2N100n10run1.pdf}
+		
 	\end{minipage}
 	\hfill
-	\begin{minipage}[t]{.4\textwidth}
+	\begin{minipage}[t]{.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures/Pseudo_alpha1dot5N200n10run1.pdf}
-	\end{minipage}  
-
-}
-\subfigure[]{	
-	\begin{minipage}[t]{.4\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{figures/Mallows_alpha2N200n10run1.pdf}
-	\end{minipage}
+		\includegraphics[width=\textwidth]{figures/Pseudo_alpha2N100n100run1sd0.pdf}
+		
+	\end{minipage} 
 	\hfill
-	\begin{minipage}[t]{.4\textwidth}
+	\begin{minipage}[t]{.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{figures/Pseudo_alpha2N200n10run1.pdf}
-	\end{minipage}  
+		\includegraphics[width=\textwidth]{figures/Pseudo_alpha2N100n100run1sd0dot75.pdf}
+		
+	\end{minipage} 
 	
 }
+
 	
-\caption{left column: Mallows, right column: pseudolikelihoods. $N = 200, n = 10$, $\alpha^0 = 1, 1.5, 2$ respectively, from top to bottom}
-\end{figure}\label{fig:heatPlot_comparison}
+\caption{left column: Mallows; middle column: pseudolikelihood without Gaussian variation; right column: pseudolikelihood with Gaussian variation. $N = 200, n = 10$, $\alpha^0 = 1, 1.5, 2$ respectively, from top to bottom}
+\label{fig:heatPlot_comparison}
+\end{figure}
 \subsection{Evidence for Theorem \ref{theorem:sigmafunction}}
 
 \subsubsection{Optimal $\sigma$ is determined by $N, n, \alpha^0$}
 As shown in \textbf{Figure} \ref{fig:sigmafunction}, in each subfigure, the $\sigma$ value that corresponds to the lowest KL-divergence is the optimal $\sigma$ for its specific ($N, n, \alpha^0$) set up. Each row of 3 figures shows a comparison of the optimal $\sigma$ when one of the variables ($N$, $n$, $\alpha$) changes. It can be observed that all three variables have an impact on the optimal value of $\sigma$. More specifically, the optimal choice of $\sigma$ appear to decrease as $N$ and $\alpha^0$ increase, and as $n$ decreases.
-\begin{figure}[h!]\label{fig:sigmafunction}
+\begin{figure}[h!]
 	\subfigure[]{
 	\includegraphics[width=\linewidth]{figures/diff_N_users.pdf}\label{fig_diff_user}}
 	\subfigure[]{
@@ -270,16 +378,17 @@ As shown in \textbf{Figure} \ref{fig:sigmafunction}, in each subfigure, the $\si
 	\subfigure[]{
 	\includegraphics[width=\linewidth]{figures/diff_alpha.pdf}\label{fig_diff_alpha}}
 \caption{x-axis: $\sigma$, y-axis: KL-divergence}
-	
+\label{fig:sigmafunction}
 \end{figure}
 
 For each $N$, $n$ and $\alpha^0$, we simulate 10 datasets, and for each dataset, a grid of $\sigma$ values are tried out. In \textbf{Figure }\ref{fig:optimSigma}, we plot $\alpha^0$ on the x-axis, and its corresponded optimal $\sigma$ on the y-axis. It can be observed that when $\alpha^0$ and $N$ are large, and $n$ is small, all $\sigma$ values result in small KL-divergence. To simplify, in these situations, we can safely set $\sigma = 0$ to achieve small KL-divergence. As $N$ and $\alpha^0$ decreases and as $n$ increases, optimal $\sigma$ increases.
-\begin{figure}[h!]\label{fig:optimSigma}
+\begin{figure}[h!]
 		\subfigure[]{
 		\includegraphics[width=\linewidth]{figures/2_4_sameN200diffn.pdf}\label{fig_optimSigma_diff_n}}
 		\subfigure[]{
 		\includegraphics[width=\linewidth]{figures/2_4_samen10diffN.pdf}\label{fig_optimSigma_diff_N}}
 		\caption{x-axis: $\alpha^0$, y-axis: optimal $\sigma$}
+		\label{fig:optimSigma}
 \end{figure}
 
 \subsubsection{using data standard deviation / n as a proxy for $\alpha^0$}
