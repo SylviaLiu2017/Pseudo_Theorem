@@ -31,7 +31,7 @@
 \date{}							% Activate to display a given date or no date
 
 \begin{document}
-\maketitle
+\maketitle 
 \section{General Notations}
 
 \begin{itemize}
@@ -217,16 +217,16 @@ In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \geq \delta^*$. 
 \subsection{Evidence for Theorem \ref{theorem:V}}
 In this experiment, we first simulate a dataset of $N$ users and $n$ items with different choices of $\alpha^0$ by drawing from the Mallows distribution.  50 datasets are generated for each scenario. We have chosen $N = 2000$ so that it is sufficiently large and the characteristics as $N \rightarrow \infty$ can be simulated. As shown in \textbf{Figure} \ref{fig:boxPlots}, we have selected several different choices of $g$ functions for the pseudolikelihoods, and we compare their KL-divergences with the Mallows posterior. The different $g$ functions are chosen as below:
 \begin{itemize}
-	\item {V: at iteration, we sample one ranking \{$i_1, ...,i_n$\} from the $g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0}))$}
-	\item {opp\_V: at each iteration, we first sample one V-ranking \{$i_1, ...,i_n$\}, and then for each ranking in the V-ranking, we generate the opposite V-ranking \{$n+1 - i_1, ..., n+1 - i_n$\}}
-	\item {1\_n\_swap: at each iteration, we first fix the ranking to be \{1,2,...,n\}, and then we conduct 5 swapping steps}
-	\item {n\_1\_swap: we first fix the ordering to be \{n, n-1, ...,1\}, and then we conduct 5 swapping steps at each iteration}
-	\item {low\_std\_swap: We first compute each item's standard deviation in the dataset and then rank them in ascending order. Based on this ranking, we conduct 5 swapping steps at each iteration}
+	\item {V: at each iteration, we sample one V-ranking \{$i_1, ...,i_n$\} from $g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0}))$}
+	\item {opp\_V: at each iteration, we first sample one V-ranking \{$i_1, ...,i_n$\}, and then for each V-ranking, we generate the opposite V-ranking \{$n+1 - i_1, ..., n+1 - i_n$\}}
+	\item {1\_n\_swap: at each iteration, we first fix the ranking to be \{1,2,...,n\}, and then conduct 5 swapping steps}
+	\item {n\_1\_swap: we first fix the ordering to be \{n, n-1, ...,1\}, and then conduct 5 swapping steps at each iteration}
+	\item {low\_std\_swap: we first compute each item's standard deviation in the dataset and then rank them in ascending order. At each iteration, we conduct 5 swapping steps at each iteration based on this ranking }
 	\item {high\_std\_swap: similar to low\_std\_swap, except that the standard deviations are ranked in descending order}
 	\item{uniform: at each iteration, a ranking is drawn uniformly from $\mathcal{P}_n$}
 \end{itemize}
 
-It can be observed from \textbf{Figure} \ref{fig:boxPlots} that the ``V-rankings'' perform consistently more superior compared to other choices. Expectedly, the opposite-V rankings' performance is inferior compared to all other choices. However, it is noteworthy to mention that in order to show the characteristics of $N \rightarrow \infty$, the required $N$ is larger for the situations when $n$ is large, and/or when $\alpha^0$ is small.
+It can be observed from \textbf{Figure} \ref{fig:boxPlots} that the ``V-rankings'' perform consistently more superior compared to other choices, while expectedly, the opposite-V rankings' performance the most inferior. However, it is noteworthy to mention that in order to preserve the characteristics of $N \rightarrow \infty$, the required $N$ is larger for the situations when $n$ is large, and/or when $\alpha^0$ is small.
 
 \begin{figure}[h!]
 		\begin{minipage}[t]{.45\textwidth}
@@ -295,7 +295,7 @@ Some selected heat plots are shown in \textbf{Figure}\ref{fig:heatPlot_compariso
 \subsection{Evidence for Theorem \ref{theorem:gaussiannoise}}
 In \textbf{Figure} \ref{fig:sigmafunction}, for each subfigure, we calculate and plot the KL-divergences between the Mallows posterior and the pseudo-likelihood, computed with different choices of $\sigma$. The left-most point on each sub-figure corresponds to the KL-divergence when no Gausian variation is introduced, i.e. $\sigma = 0$. It can be observed that for most situations shown in the figure, the lowest KL-divergence is achieved when some level of Gaussian variation is introduced, especially as $N$ and $\alpha^0$ are relatively small. However, as $N$ and $\alpha^0$ increase, the optimal $\sigma$ appears to decrease towards 0. 
 
-\textbf{Figure} \ref{fig:heatPlot_comparison} contains a few heat plot examples. The first column are heat plots of the Mallows posterior, the middle and right columns contain heat plots of the pseudolikelihood with and without Gaussian variations. It can be observed that introducing the Gaussian variation can reduce the KL divergence between the Mallows posterior and the pseudolikelihood.
+\textbf{Figure} \ref{fig:heatPlot_comparison} contains a few heat plot examples. The first column are heat plots of the Mallows posterior, the middle and right columns contain heat plots of the pseudolikelihood with and without Gaussian variations. It can be observed that introducing the Gaussian variation can reduce the KL divergence between the Mallows posterior and the pseudolikelihood. This is largely due to the fact that since the true ``V-ranking'' cannot be accurately inferred from the data as $N$ is limited, we need to introduce some variation around the inferred ``V'' ranking in order to mitigate the inaccuracy.
 
 \begin{figure}[h!]
 		\subfigure[]{
@@ -391,7 +391,7 @@ For each $N$, $n$ and $\alpha^0$, we simulate 10 datasets, and for each dataset,
 		\label{fig:optimSigma}
 \end{figure}
 
-\subsubsection{using data standard deviation / n as a proxy for $\alpha^0$}
+\subsubsection{Using data standard deviation / n as a proxy for $\alpha^0$}
 Under most situations, the value of $\alpha^0$ is unknown, however, we can compute the marginal standard deviation of each item from the data, and normalize it by deviding it by n. The trend demonstrated in \textbf{Figure }\ref{fig:optimSigma} is well-preserved, as shown in \textbf{Figure }\ref{fig:optimSigma_sd_data}.
 
 \begin{figure}[h!]\label{fig:optimSigma_sd_data}
