@@ -1,0 +1,99 @@
+
+
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or epsÂ§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath} 
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{bbm}
+\usepackage{bbold}
+\usepackage[T1]{fontenc}
+\usepackage{subfigure}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{mydef}{Definition}
+
+\usepackage[utf8]{inputenc}
+
+
+%SetFonts
+
+%SetFonts
+
+
+\title{CProof for Lemma 2.1}
+\author{}
+\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\section{Notations}
+\begin{itemize}
+	\item {$N$: Number of users}
+	
+	\item {$n$: Number of items,    $
+		n = \left \{
+		\begin{aligned}
+		&2m-1, && \text{if n is odd} \\
+		&2m, && \text{otherwise}
+		\end{aligned} \right.
+		$}
+	
+	\item{$\mathcal{P}_n$: the space of permutation of $n$ items}
+	\item {$\bm{R}^1,...,\bm{R}^N$: full rankings given by the users, $\bm{R}_j \sim \text{Mallows}(\alpha^0, \bm{\rho}^0)$}
+	
+	\item{ \{$o_1, ..., o_n$\}: an ordering of $n$ items that corresponds to a ranking \{$i_1, ..., i_n$\} s.t. $i_{o_j} = j$ }.
+\end{itemize}
+
+\subsection{}
+\begin{lemma} 
+	For any given $n$ and $\alpha^0>0$, $\mathbb{E}[{R}_{o_j}]<\mathbb{E}[{R}_{o_{j+1}}]$, where $\{\rho_{o_1}, ..., \rho_{o_n}\} = \{1, 2, ..., n\}$
+	
+\end{lemma}
+
+\begin{proof}
+According to the definition of expectations, \\
+$\mathbb{E}[R_{o_j}] = \sum\limits_{\bm{r}\in \mathcal{P}_n} r_{o_j}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho^0})\}$, and  $\mathbb{E}[R_{o_{j+1}}] = \sum\limits_{\bm{r}\in \mathcal{P}_n} r_{o_{j+1}}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho^0})\}$ \\
+Given a permutation $r$ s.t. $r_{o_j} = a$ and  $r_{o_{j+1}} = b$, $a<b$, we can find another permutation $r'$ s.t. $r'_{o_{j+1}} = a$ and  $r_{o_{j}} = b$, $r_i = r'_i$, $\forall i\neq o_j, o_{j+1}$.
+
+If we divide $\mathcal{P}_n $ into
+\begin{enumerate}
+	\item{$\mathcal{P}_A$ = $\{r: r_{o_j} = a, r_{o_{j+1}=b}\}$, $\mathcal{P}_{A'}$ = $\{r': r'_{o_j} = b, r'_{o_{j+1}=a}\}$, $a\geq j+1$}
+	
+	\item{$\mathcal{P}_B$ = $\{r: r_{o_j} = a, r_{o_{j+1}=b}\}$, $\mathcal{P}_{B'}$ = $\{r': r'_{o_j} = b, r'_{o_{j+1}=a}\}$, $b\leq j$}
+	
+	\item{$\mathcal{P}_C$ = $\{r: r_{o_j} = a, r_{o_{j+1}=b}\}$, $\mathcal{P}_{C'}$ = $\{r': r'_{o_j} = b, r'_{o_{j+1}=a}\}$, $a\leq j$, $b\geq j+1$},
+\end{enumerate}
+
+we can rewrite the expectations to be: \\
+$\mathbb{E}[R_{o_{j}}] = \sum\limits_{\bm{r}\in \mathcal{P}_A} r_{o_j}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho^0})\}$ +$\sum\limits_{\bm{r}\in \mathcal{P}_{A'}} r_{o_j}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho^0})\}$ +\\$\sum\limits_{\bm{r}\in \mathcal{P}_B} r_{o_j}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho^0})\}$ +$\sum\limits_{\bm{r}\in \mathcal{P}_{B'}} r_{o_j}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho^0})\}$+ \\$\sum\limits_{\bm{r}\in \mathcal{P}_C} r_{o_j}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho^0})\}$+$\sum\limits_{\bm{r}\in \mathcal{P}_{C'}} r_{o_j}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho^0})\}$, and similarly,
+
+$\mathbb{E}[R_{o_{j+1}}] = \sum\limits_{\bm{r}\in \mathcal{P}_A} r_{o_{j+1}}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho^0})\}$ +$\sum\limits_{\bm{r}\in \mathcal{P}_{A'}} r_{o_{j+1}}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho^0})\}$ +\\$\sum\limits_{\bm{r}\in \mathcal{P}_B} r_{o_{j+1}}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho^0})\}$ +$\sum\limits_{\bm{r}\in \mathcal{P}_{B'}} r_{o_{j+1}}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho^0})\}$+ \\$\sum\limits_{\bm{r}\in \mathcal{P}_C} r_{o_{j+1}}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho^0})\}$+$\sum\limits_{\bm{r}\in \mathcal{P}_{C'}} r_{o_{j+1}}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho^0})\}$.
+
+Let us first consider $\mathcal{P}_A$ and $\mathcal{P}_{A'}$'s contributions to $\mathbb{E}[R_{o_{j}}]$ and $\mathbb{E}[R_{o_{j+1}}]$.
+For any $r \in \mathcal{P}_A$ and its corresponding $r' \in \mathcal{P}_{A'}$ s.t. $r_{o_j} = r'_{o_{j+1}} = a$, $r_{o_{j+1}} = r'_{o_{j}} = b$, and $r_i = r'_i \forall i\neq o_j, o_{j+1}$, it can be inferred that $P(\bm{r}) = P(\bm{r'})$, since \\
+$d(\bm{r}, \bm{\rho^0}) = \sum\limits_{i=1}^{j-1}|r_{o_i} - \rho^0_{o_i}| + |r_{o_j} - \rho_{o_j}| + |r_{o_{j+1}} - \rho^0_{o_{j+1}}| + \sum\limits_{i = j+2}^{n}|r_{o_i} - \rho^0_{o_{i}}|$ \\
+= $\sum\limits_{i \neq j, j+1} |r_{o_i} - i| + |a-j| + |b - (j+1)|$\\
+=$\sum\limits_{i \neq j, j+1} |r_{o_i} - i| + a-j + b - (j+1)$, similarly, \\
+
+$d(\bm{r'}, \bm{\rho^0}) = \sum\limits_{i=1}^{j-1}|r'_{o_i} - \rho^0_{o_i}| + |r'_{o_j} - \rho_{o_j}| + |r'_{o_{j+1}} - \rho^0_{o_{j+1}}| + \sum\limits_{i = j+2}^{n}|r'_{o_i} - \rho^0_{o_{i}}|$ \\
+= $\sum\limits_{i \neq j, j+1} |r'_{o_i} - i| + |b-j| + |a - (j+1)|$\\
+=$\sum\limits_{i \neq j, j+1} |r_{o_i} - i| + b-j + a - (j+1)$ \\
+= $d(\bm{r}, \bm{\rho^0}) $
+
+Therefore, for each \{$\bm{r}, \bm{r'}$\} pair, their contributions to $\mathbb{E}[R_{o_j}]$ and $\mathbb{E}[R_{o_{j+1}}]$ are: \\
+$\mathbb{E}[R_{o_j}]|_{\bm{r}\in \mathcal{P}_A,\bm{r'}\in \mathcal{P}_{A'}} = P(\bm{r})\cdot r_{o_j} + P(\bm{r'})\cdot r'_{o_j} = P(\bm{r})\cdot (a+b) $ \\
+
+$\mathbb{E}[R_{o_{j+1}}]|_{\bm{r}\in \mathcal{P}_A,\bm{r'}\in \mathcal{P}_{A'}} = P(\bm{r})\cdot r_{o_{j+1}} + P(\bm{r'})\cdot r'_{o_{j+1}} = P(\bm{r})\cdot (a+b)$ 
+\end{proof}
+
+\end{document}
