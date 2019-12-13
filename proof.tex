@@ -30,7 +30,7 @@
 %SetFonts
 
 
-\title{CProof for Lemma 2.1}
+\title{Proof for Lemma 2.1}
 \author{}
 \date{}							% Activate to display a given date or no date
 
@@ -90,10 +90,73 @@ $d(\bm{r'}, \bm{\rho^0}) = \sum\limits_{i=1}^{j-1}|r'_{o_i} - \rho^0_{o_i}| + |r
 =$\sum\limits_{i \neq j, j+1} |r_{o_i} - i| + b-j + a - (j+1)$ \\
 = $d(\bm{r}, \bm{\rho^0}) $
 
-Therefore, for each \{$\bm{r}, \bm{r'}$\} pair, their contributions to $\mathbb{E}[R_{o_j}]$ and $\mathbb{E}[R_{o_{j+1}}]$ are: \\
+For each \{$\bm{r}, \bm{r'}$\} pair, their contributions to $\mathbb{E}[R_{o_j}]$ and $\mathbb{E}[R_{o_{j+1}}]$ are: \\
 $\mathbb{E}[R_{o_j}]|_{\bm{r}\in \mathcal{P}_A,\bm{r'}\in \mathcal{P}_{A'}} = P(\bm{r})\cdot r_{o_j} + P(\bm{r'})\cdot r'_{o_j} = P(\bm{r})\cdot (a+b) $ \\
 
 $\mathbb{E}[R_{o_{j+1}}]|_{\bm{r}\in \mathcal{P}_A,\bm{r'}\in \mathcal{P}_{A'}} = P(\bm{r})\cdot r_{o_{j+1}} + P(\bm{r'})\cdot r'_{o_{j+1}} = P(\bm{r})\cdot (a+b)$ 
+
+Therefore, for all $\bm{r}\in \mathcal{P}_A$ and their corresponding $\bm{r'}\in \mathcal{P}_{A'}$, we have \\
+$\sum\limits_{\bm{r}\in \mathcal{P}_A, \bm{r}\in \mathcal{P}_{A'}}\mathbb{E}[R_{o_j}] |_{\bm{r}, \bm{r'}} = \sum\limits_{\bm{r}\in \mathcal{P}_A, \bm{r}\in \mathcal{P}_{A'}}\mathbb{E}[R_{o_{j+1}}] |_{\bm{r}, \bm{r'}}$
+
+Similarly, let us now consider $\mathcal{P}_B$ and $\mathcal{P}_{B'}$'s contributions to $\mathbb{E}[R_{o_{j}}]$ and $\mathbb{E}[R_{o_{j+1}}]$.
+
+For any $r \in \mathcal{P}_B$ and its corresponding $r' \in \mathcal{P}_{B'}$ s.t. $r_{o_j} = r'_{o_{j+1}} = a$, $r_{o_{j+1}} = r'_{o_{j}} = b$, and $r_i = r'_i \forall i\neq o_j, o_{j+1}$, it can be inferred that $P(\bm{r}) = P(\bm{r'})$, since \\
+$d(\bm{r}, \bm{\rho^0}) = \sum\limits_{i=1}^{j-1}|r_{o_i} - \rho^0_{o_i}| + |r_{o_j} - \rho_{o_j}| + |r_{o_{j+1}} - \rho^0_{o_{j+1}}| + \sum\limits_{i = j+2}^{n}|r_{o_i} - \rho^0_{o_{i}}|$ \\
+= $\sum\limits_{i \neq j, j+1} |r_{o_i} - i| + |a-j| + |b - (j+1)|$\\
+=$\sum\limits_{i \neq j, j+1} |r_{o_i} - i| + j-a + (j+1)-b$, and \\
+
+$d(\bm{r'}, \bm{\rho^0}) = \sum\limits_{i=1}^{j-1}|r'_{o_i} - \rho^0_{o_i}| + |r'_{o_j} - \rho_{o_j}| + |r'_{o_{j+1}} - \rho^0_{o_{j+1}}| + \sum\limits_{i = j+2}^{n}|r'_{o_i} - \rho^0_{o_{i}}|$ \\
+= $\sum\limits_{i \neq j, j+1} |r'_{o_i} - i| + |b-j| + |a - (j+1)|$\\
+=$\sum\limits_{i \neq j, j+1} |r_{o_i} - i| + j-b + (j+1)- a$ \\
+= $d(\bm{r}, \bm{\rho^0}) $
+
+For each \{$\bm{r}, \bm{r'}$\} pair, their contributions to $\mathbb{E}[R_{o_j}]$ and $\mathbb{E}[R_{o_{j+1}}]$ are: \\
+$\mathbb{E}[R_{o_j}]|_{\bm{r}\in \mathcal{P}_B,\bm{r'}\in \mathcal{P}_{B'}} = P(\bm{r})\cdot r_{o_j} + P(\bm{r'})\cdot r'_{o_B} = P(\bm{r})\cdot (a+b) $ \\
+
+$\mathbb{E}[R_{o_{j+1}}]|_{\bm{r}\in \mathcal{P}_B,\bm{r'}\in \mathcal{P}_{B'}} = P(\bm{r})\cdot r_{o_{j+1}} + P(\bm{r'})\cdot r'_{o_{j+1}} = P(\bm{r})\cdot (a+b)$ 
+
+Therefore, for all $\bm{r}\in \mathcal{P}_A$ and their corresponding $\bm{r'}\in \mathcal{P}_{A'}$, we have \\
+$\sum\limits_{\bm{r}\in \mathcal{P}_B, \bm{r}\in \mathcal{P}_{B'}}\mathbb{E}[R_{o_j}] |_{\bm{r}, \bm{r'}} = \sum\limits_{\bm{r}\in \mathcal{P}_B, \bm{r}\in \mathcal{P}_{B'}}\mathbb{E}[R_{o_{j+1}}] |_{\bm{r}, \bm{r'}}$
+
+Up to this point, we have proven that \\
+$\sum\limits_{\bm{r}\in \mathcal{P}_A, \bm{r}\in \mathcal{P}_{A'}}\mathbb{E}[R_{o_j}] |_{\bm{r}, \bm{r'}} + \sum\limits_{\bm{r}\in \mathcal{P}_B, \bm{r}\in \mathcal{P}_{B'}}\mathbb{E}[R_{o_j}] |_{\bm{r}, \bm{r'}}= \sum\limits_{\bm{r}\in \mathcal{P}_A, \bm{r}\in \mathcal{P}_{A'}}\mathbb{E}[R_{o_{j+1}}] |_{\bm{r}, \bm{r'}}+\sum\limits_{\bm{r}\in \mathcal{P}_B, \bm{r}\in \mathcal{P}_{B'}}\mathbb{E}[R_{o_{j+1}}] |_{\bm{r}, \bm{r'}}$,
+for $\alpha > 0$, proving that $\mathbb{E}[R_{o_j}] < \mathbb{E}[R_{o_{j+1}}]$ is equivalent to proving \\
+$\sum\limits_{\bm{r}\in \mathcal{P}_C, \bm{r}\in \mathcal{P}_{C'}}\mathbb{E}[R_{o_j}] |_{\bm{r}, \bm{r'}} < \sum\limits_{\bm{r}\in \mathcal{P}_C, \bm{r}\in \mathcal{P}_{C'}}\mathbb{E}[R_{o_{j+1}}] |_{\bm{r}, \bm{r'}}$
+
+
+Now let us consider $\mathcal{P}_C$ and $\mathcal{P}_{C'}$'s contributions to $\mathbb{E}[R_{o_{j}}]$ and $\mathbb{E}[R_{o_{j+1}}]$.
+
+
+For any $r \in \mathcal{P}_C$ and its corresponding $r' \in \mathcal{P}_{C'}$, we have
+
+$d(\bm{r}, \bm{\rho^0}) = \sum\limits_{i=1}^{j-1}|r_{o_i} - \rho^0_{o_i}| + |r_{o_j} - \rho_{o_j}| + |r_{o_{j+1}} - \rho^0_{o_{j+1}}| + \sum\limits_{i = j+2}^{n}|r_{o_i} - \rho^0_{o_{i}}|$ \\
+= $\sum\limits_{i \neq j, j+1} |r_{o_i} - i| + |a-j| + |b - (j+1)|$\\
+=$\sum\limits_{i \neq j, j+1} |r_{o_i} - i| + j-a + b-(j+1)$\\
+=$\sum\limits_{i \neq j, j+1} |r_{o_i} - i| + b-a -1 $, and \\
+
+$d(\bm{r'}, \bm{\rho^0}) = \sum\limits_{i=1}^{j-1}|r'_{o_i} - \rho^0_{o_i}| + |r'_{o_j} - \rho_{o_j}| + |r'_{o_{j+1}} - \rho^0_{o_{j+1}}| + \sum\limits_{i = j+2}^{n}|r'_{o_i} - \rho^0_{o_{i}}|$ \\
+= $\sum\limits_{i \neq j, j+1} |r'_{o_i} - i| + |b-j| + |a - (j+1)|$\\
+=$\sum\limits_{i \neq j, j+1} |r_{o_i} - i| + b-j + (j+1)- a$ \\
+= $\sum\limits_{i \neq j, j+1} |r_{o_i} - i| + b-a+1 $\\
+=$d(\bm{r}, \bm{\rho^0}) +2$
+
+Therefore, for any $\alpha^0 > 0$ and any given $\bm{r} \in \mathcal{P}_C$ and its corresponding $\bm{r'} \in \mathcal{P}_{C'}$, we have $P(\bm{r}) > P(\bm{r'}) $. For each \{$\bm{r}, \bm{r'}$\} pair, their contributions to $\mathbb{E}[R_{o_j}]$ and $\mathbb{E}[R_{o_{j+1}}]$ are: \\
+$\mathbb{E}[R_{o_j}]|_{\bm{r}\in \mathcal{P}_C,\bm{r'}\in \mathcal{P}_{C'}} = P(\bm{r})\cdot r_{o_j} + P(\bm{r'})\cdot r'_{o_B} = a\cdot P(\bm{r})\cdot + b\cdot P(\bm{r'}) $ \\
+$\mathbb{E}[R_{o_{j+1}}]|_{\bm{r}\in \mathcal{P}_C,\bm{r'}\in \mathcal{P}_{C'}} = P(\bm{r})\cdot r_{o_{j+1}} + P(\bm{r'})\cdot r'_{o_{j+1}} = b\cdot P(\bm{r})\cdot + a\cdot P(\bm{r'})$ 
+
+$\mathbb{E}[R_{o_j}]|_{\bm{r}\in \mathcal{P}_C,\bm{r'}\in \mathcal{P}_{C'}} - \mathbb{E}[R_{o_{j+1}}]|_{\bm{r}\in \mathcal{P}_B,\bm{r'}\in \mathcal{P}_{B'}}$ \\ =$(a-b)P(\bm{r}) + (b-a)P(\bm{r'})$ \\
+= $(a-b)\cdot (P(\bm{r}) - P(\bm{r'}))$
+
+Recall that $a<b$ and $P(\bm{r}) > P(\bm{r'})$ for any $r \in \mathcal{P}_C$ and its corresponding $r' \in \mathcal{P}_{C'}$, it can be obtained that \\
+
+$\mathbb{E}[R_{o_j}]|_{\bm{r}\in \mathcal{P}_C,\bm{r'}\in \mathcal{P}_{C'}} - \mathbb{E}[R_{o_{j+1}}]|_{\bm{r}\in \mathcal{P}_B,\bm{r'}\in \mathcal{P}_{B'}} < 0$, i.e., $\mathbb{E}[R_{o_j}]|_{\bm{r}\in \mathcal{P}_C,\bm{r'}\in \mathcal{P}_{C'}} < \mathbb{E}[R_{o_{j+1}}]|_{\bm{r}\in \mathcal{P}_B,\bm{r'}\in \mathcal{P}_{B'}}$
+
+It is straight forward to obtain that:\\
+ $\sum\limits_{\bm{r}\in \mathcal{P}_C, \bm{r}\in \mathcal{P}_{C'}}\mathbb{E}[R_{o_j}] |_{\bm{r}, \bm{r'}} < \sum\limits_{\bm{r}\in \mathcal{P}_C, \bm{r}\in \mathcal{P}_{C'}}\mathbb{E}[R_{o_{j+1}}] |_{\bm{r}, \bm{r'}}$,
+ 
+and therefore, 
+for any $\alpha > 0$, we have $\mathbb{E}[R_{o_j}] < \mathbb{E}[R_{o_{j+1}}]$
+
 \end{proof}
 
 \end{document}
