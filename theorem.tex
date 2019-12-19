@@ -216,7 +216,7 @@ In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \geq \delta^*$. 
 
 \section{Evidence and proofs}
 \subsection{Evidence for Theorem \ref{theorem:V}}
-In this experiment, we first simulate a dataset of $N$ users and $n$ items with different choices of $\alpha^0$ by drawing from the Mallows distribution.  50 datasets are generated for each scenario. We have chosen $N = 2000$ so that it is sufficiently large and the characteristics as $N \rightarrow \infty$ can be simulated. As shown in \textbf{Figure} \ref{fig:boxPlots}, we have selected several different choices of $g$ functions for the pseudolikelihoods, and we compare their KL-divergences with the Mallows posterior. The different $g$ functions are chosen as below:
+In this experiment, we first simulate a dataset of $N$ users and $n$ items with different choices of $\alpha^0$ by drawing from the Mallows distribution.  50 datasets are generated for each scenario. We have chosen $N = 2000$ so that it is sufficiently large and the characteristics as $N \rightarrow \infty$ can be simulated. As shown in \textbf{Figure} \ref{fig:boxPlots}, we have selected several different choices of $g$ functions for the pseudolikelihoods, and we compare their KL-divergences with the Mallows posterior. The different $g$ functions, as displayed in \textbf{Figure} \ref{fig:boxPlots}, are chosen as below:
 \begin{itemize}
 	\item {V: at each iteration, we sample one V-ranking \{$i_1, ...,i_n$\} from $g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0}))$}
 	\item {opp\_V: at each iteration, we first sample one V-ranking \{$i_1, ...,i_n$\}, and then for each V-ranking, we generate the opposite V-ranking \{$n+1 - i_1, ..., n+1 - i_n$\}}
@@ -227,30 +227,75 @@ In this experiment, we first simulate a dataset of $N$ users and $n$ items with 
 	\item{uniform: at each iteration, a ranking is drawn uniformly from $\mathcal{P}_n$}
 \end{itemize}
 
-It can be observed from \textbf{Figure} \ref{fig:boxPlots} that the ``V-rankings'' perform consistently more superior compared to other choices, while expectedly, the opposite-V rankings' performance the most inferior. However, it is noteworthy to mention that in order to preserve the characteristics of $N \rightarrow \infty$, the required $N$ is larger for the situations when $n$ is large, and/or when $\alpha^0$ is small.
+It can be observed from \textbf{Figure} \ref{fig:boxPlots} that as $N$ increases, the ``V-rankings'' performs more and more superior compared to all the other $g$ functions. When $N = 2000$, asymptotic characteristics can be clearly observed, and as shown in the last row of \textbf{Figure} \ref{fig:boxPlots}, it consistently performs more superior compared to other choices. Expectedly, the opposite-V rankings' performance the most inferior. However, it is noteworthy to mention that in order to preserve the characteristics of $N \rightarrow \infty$, the required $N$ is larger for the situations when $n$ is large, and/or when $\alpha^0$ is small.
 
 \begin{figure}[h!]
-		\begin{minipage}[t]{.45\textwidth}
+	\begin{minipage}[t]{.23\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/theorem2_2/N500n10alpha1.pdf}
+		
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{.23\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/theorem2_2/N500n20alpha3.pdf}
+		
+	\end{minipage} 
+	\begin{minipage}[t]{.23\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/theorem2_2/N500n30alpha7.pdf}
+		
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{.23\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/theorem2_2/N500n50alpha15.pdf}
+		
+	\end{minipage} 
+
+	
+	\begin{minipage}[t]{.23\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/theorem2_2/N1000n10alpha1.pdf}
+		
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{.23\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/theorem2_2/N1000n20alpha3.pdf}
+		
+	\end{minipage} 
+	\begin{minipage}[t]{.23\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/theorem2_2/N1000n30alpha7.pdf}
+		
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{.23\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/theorem2_2/N1000n50alpha15.pdf}
+		
+	\end{minipage} 
+
+
+	\begin{minipage}[t]{.23\textwidth}
 			\centering
 			\includegraphics[width=\textwidth]{figures/theorem2_2/N2000n10alpha1.pdf}
 			
 		\end{minipage}
 		\hfill
-		\begin{minipage}[t]{.45\textwidth}
+		\begin{minipage}[t]{.23\textwidth}
 			\centering
 			\includegraphics[width=\textwidth]{figures/theorem2_2/N2000n20alpha3.pdf}
 			
 		\end{minipage} 
-
-	
-	
-		\begin{minipage}[t]{.45\textwidth}
+		\begin{minipage}[t]{.23\textwidth}
 			\centering
 			\includegraphics[width=\textwidth]{figures/theorem2_2/N2000n30alpha7.pdf}
 			
 		\end{minipage}
 		\hfill
-		\begin{minipage}[t]{.45\textwidth}
+		\begin{minipage}[t]{.23\textwidth}
 			\centering
 			\includegraphics[width=\textwidth]{figures/theorem2_2/N2000n50alpha15.pdf}
 			
