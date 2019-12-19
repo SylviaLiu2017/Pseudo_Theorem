@@ -204,10 +204,11 @@ With the usage of  $g'(i_1, ...,i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma)$, t
 &0, && \text{if } \delta(\alpha^0,n,N)\leq \delta ^{*} \\
 &f(\alpha^0, n,N), && \text{otherwise}
 \end{aligned} \right.
-$
+$, where $\frac{\partial f}{\partial \alpha^0} <0, \frac{\partial f}{\partial N} <0$, and $\frac{\partial f}{\partial n} >0$.
+
 \end{theorem}
 
-In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \geq \delta^*$. Beyond this point, the optimal choice of $\sigma$ should be greater than 0, and it follows a function $f(\alpha^0,n,N)$.
+In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \geq \delta^*$. Beyond this point, the optimal choice of $\sigma$ should be greater than 0, and it follows a function $f(\alpha^0,n,N)$, which increases as $n$ increases, and decreases as $\alpha^0$ and $N$ increase.
 
 \subsection{ }
 \begin{theorem}
@@ -216,7 +217,7 @@ In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \geq \delta^*$. 
 
 \section{Evidence and proofs}
 \subsection{Evidence for Theorem \ref{theorem:V}}
-In this experiment, we first simulate a dataset of $N$ users and $n$ items with different choices of $\alpha^0$ by drawing from the Mallows distribution.  50 datasets are generated for each scenario. We have chosen $N = 2000$ so that it is sufficiently large and the characteristics as $N \rightarrow \infty$ can be simulated. As shown in \textbf{Figure} \ref{fig:boxPlots}, we have selected several different choices of $g$ functions for the pseudolikelihoods, and we compare their KL-divergences with the Mallows posterior. The different $g$ functions, as displayed in \textbf{Figure} \ref{fig:boxPlots}, are chosen as below:
+In this experiment, we first simulate a dataset of $N$ users and $n$ items with different choices of $\alpha^0$ by drawing from the Mallows distribution.  50 datasets are generated for each scenario. We have chosen $N = 2000$ so that it is sufficiently large and the characteristics as $N \rightarrow \infty$ can be simulated. As shown in \textbf{Figure} \ref{fig:boxPlots}, we have selected several different choices of $g$ functions for the pseudolikelihoods, and we compare their KL-divergences with the Mallows posterior. The different $g$ functions, following the sequence displayed in \textbf{Figure} \ref{fig:boxPlots}, are chosen as below:
 \begin{itemize}
 	\item {V: at each iteration, we sample one V-ranking \{$i_1, ...,i_n$\} from $g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0}))$}
 	\item {opp\_V: at each iteration, we first sample one V-ranking \{$i_1, ...,i_n$\}, and then for each V-ranking, we generate the opposite V-ranking \{$n+1 - i_1, ..., n+1 - i_n$\}}
