@@ -21,7 +21,6 @@
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{mydef}{Definition}
-
 %SetFonts
 
 %SetFonts
@@ -47,15 +46,16 @@
 	\end{aligned} \right.
 	$}
 	
-	\item{$\mathcal{P}_n$: the space of permutation of $n$ items}
+	\item {$\{A_1, ..., A_n\}$: a set of $n$ items}
+	\item{$\mathcal{P}_n$: the space of permutation of $n$ integers}
 	\item {$\bm{R}^1,...,\bm{R}^N$: full rankings given by the users}
 	
 	
 	\item {$\bm{R}^j \in \mathcal{P}_n$= \{$R^j_1,...,R^j_n$\} $\sim$ Mallows($\bm{\rho}^0, \alpha^0$), defined as 
-	$P(\bm{R}^j|\alpha^0, \bm{\rho}^0) = \frac{\text{exp}\{-\frac{\alpha^0}{n}d(\bm{R}^j, \bm{\rho}^0)\}}{\sum\limits_{\bm{r}\in \mathcal{P}_n}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{R}^j, \bm{\rho}^0)\}}$}
+	$P(\bm{R}^j|\alpha^0, \bm{\rho}^0) = \frac{\text{exp}\{-\frac{\alpha^0}{n}d(\bm{R}^j, \bm{\rho}^0)\}}{\sum\limits_{\bm{r}\in \mathcal{P}_n}\text{exp}\{-\frac{\alpha^0}{n}d(\bm{r}, \bm{\rho}^0)\}}$}
 	
 	
-	\item {$P(\bm{\rho}|\bm{R}^1,...,\bm{R}^N,\alpha^o)$: Mallows posterior}
+	\item {$P(\bm{\rho}|\bm{R}^1,...,\bm{R}^N,\alpha^o)$ = $\frac{P(\bm{R}_1, ...,\bm{R}_N|\alpha^0, \bm{\rho})\cdot P(\bm{\rho})}{\sum\limits_{\bm{\rho}\in\mathcal{P}_n}P(\bm{R}_1, ...,\bm{R}_N|\alpha^0, \bm{\rho})\cdot P(\bm{\rho})}$: Mallows posterior}
 	
 	
 	\item{\{$i_1, ..., i_n$\}: a ranking of $n$ items that determines the sequence following which the items are to be sampled. i.e. $i_j = k$ indicates that item $j$ is the k-th item is to be sampled}
@@ -63,7 +63,7 @@
 	\item{ \{$o_1, ..., o_n$\}: an ordering of $n$ items that corresponds to \{$i_1, ..., i_n$\} s.t. $i_{o_k} = k$ }. $\{o_1, ...,o_n\}$ and \{$i_1, ..., i_n$\} have a one-to-one relationship
 	
 	%pseudo components 
-	\item {$Q(\tilde{\bm{\rho}}|\cdot)$=$\sum\limits_{\{i_1, ..., i_n \}\in \mathcal{P}_n }q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha_0, \bm{R}^1, ...,\bm{R}^N) \cdot g(i_1, ..., i_n| \dots)$ : pseudolikelihood that approximates the Mallows posterior}
+	\item {Let $g(i_1, ..., i_n)$ be any probability density on $\mathcal{P}_n$. \\$Q(\tilde{\bm{\rho}}|\bm{R}^1, ..., \bm{R}^N, \alpha^0)$=$\sum\limits_{\{i_1, ..., i_n \}\in \mathcal{P}_n }q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha^0, \bm{R}^1, ...,\bm{R}^N) \cdot g(i_1, ..., i_n)$ : pseudolikelihood, for $\tilde{\bm{\rho}} \in \mathcal{P}_n$, which approximates the Mallows posterior}
 	
 	\item {$q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha^0, \bm{R}^1, ..., \bm{R}^N)  = q(\tilde{\bm{\rho}}|o_1, ..., o_n, \alpha^0, \bm{R}^1, ..., \bm{R}^N)  \\
 		=q(\tilde{\rho}_{o_1}|\alpha^0,o_1, R^1_{o_1},...,R^N_{o_1}) \cdot
@@ -71,19 +71,17 @@
 		... \cdot \\
 		q(\tilde{\rho}_{o_{n-1}}|\alpha^0,o_{n-1}, \tilde{\rho}_{o_1},...,\tilde{\rho}_{o_{n-2}}, R^1_{n-1},...,R^N_{n-1}) \cdot
 		q(\tilde{\rho}_{o_{n}}|\alpha^0,o_{n}, \tilde{\rho}_{o_1},...,\tilde{\rho}_{o_{n-1}}, R^1_n, ..., R^N_n)$}
-	\begin{itemize}
-	\item{	$ {q(\tilde{\rho}_{o_1}|\alpha^0, o_1,R^1_{o_1}, ...,R^N_{o_1}) }
-	= \frac{\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_1}, \tilde{\rho}_{o_1})\}\mathbb{1}_{\tilde{\rho}_{o_1}\in \{1, ...,n\}}}
-	{\sum\limits_{\tilde{r}_{o_1}\in \{1, .., n\}}\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_1}, \tilde{r}_{o_1})\}} $}
 
-\item{
+	where {	$ {q(\tilde{\rho}_{o_1}|\alpha^0, o_1,R^1_{o_1}, ...,R^N_{o_1}) }
+	= \frac{\text{exp}\{- \frac{\alpha^0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_1}, \tilde{\rho}_{o_1})\}}
+	{\sum\limits_{\tilde{r}_{o_1}\in \{1, .., n\}}\text{exp}\{- \frac{\alpha^0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_1}, \tilde{r}_{o_1})\}} $}, ${\tilde{\rho}_{o_1}\in \{1, ...,n\}}$, and where {
 	$ {q(\tilde{\rho}_{o_k}|\alpha^0, o_k, \tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}},R^1_{o_k}, ...,R^N_{o_k}) }
-	= \frac{\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_k}, \tilde{\rho}_{o_k})\}\mathbb{1}_{\tilde{\rho}_{o_k}\in\{1, .., n\}\textbackslash \{\tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}}\}}}
-	{\sum\limits_{\tilde{r}_{o_k}\in \{1, .., n\}\textbackslash \{\tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}}\}}\text{exp}\{- \frac{\alpha_0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_k}, \tilde{r}_{o_k})\}} $} for $k = 2, ..., n$
+	= \frac{\text{exp}\{- \frac{\alpha^0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_k}, \tilde{\rho}_{o_k})\}}
+	{\sum\limits_{\tilde{r}_{o_k}\in \{1, .., n\}\textbackslash \{\tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}}\}}\text{exp}\{- \frac{\alpha^0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_k}, \tilde{r}_{o_k})\}} $}, ${\tilde{\rho}_{o_k}\in\{1, .., n\}\textbackslash \{\tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}}\}}$,  for $k = 2, ..., n$
 
-	\end{itemize}
 
-	\item{ $\bm{o}^0$: a set of ordering that corresponds to $\bm{\rho}^0$ s.t. ${{\rho}^0}^{-1}(m) = o^0_m$}
+
+	\item{ $\bm{o}^0$: a set of ordering that corresponds to $\bm{\rho}^0$ s.t. ${{\rho}^0}^{-1}(m) = o^0_m$, i.e., $o^0_m$ is the item with rank $m$ in $\bm{\rho}^0$}
 	
 	
 	\item{Define the ``v-function'' $f_v(\cdot)$ such that $f_v(\bm{\rho}^0)$ = $\mathcal{V}_{\bm{\rho}^0}$}, where 
@@ -104,28 +102,34 @@
 \section{Theorems and Lemmas}
 \subsection{ }
 \begin{lemma} \label{lem:nocross}
-Given there are odd number of items, i.e. $n = 2m - 1$. $\forall \alpha^0 \in (0, \infty)$,
+Let $\bm{R}\in \mathcal{P}_n$ be distributed according to $Mallows(\bm{\rho}^0, \alpha^0)$, for any fixed $\bm{\rho^0}$ and $\alpha^0$, if $n$ is odd, i.e., $n = 2m - 1$. $\forall \alpha^0 \in (0, \infty)$, the following is true.
 
 	\begin{enumerate} 
 		\item{$\mathbb{E}(R_{o^0_m}|\bm{\rho}_{0}, \alpha^0) = \rho^0_{o_m} = m$ }
 		\item{$\forall j \in [1, m-2]$, $j< \mathbb{E}[R_{o^0_j}|\bm{\rho}^0, \alpha^0] <\mathbb{E}[R_{o^0_{j+1}}|\bm{\rho}^0, \alpha^0] < m$}
-		\item{$\forall j \in [m+2, 2m-1]$, $m< \mathbb{E}[R_{o^0_{j-1}}|\bm{\rho}^0, \alpha^0] <\mathbb{E}[R_{o^0_{j}}|\bm{\rho}^0, \alpha^0] < j$}
-	\end{enumerate}
-Similarly, if $n$ is even, i.e. $n = 2m$,  $\forall \alpha^0 \in (0, \infty)$,
-	\begin{enumerate} 
+		\item{$\forall j \in [m+2, 2m-1]$, $m< \mathbb{E}[R_{o^0_{j-1}}|\bm{\rho}^0, \alpha^0] <\mathbb{E}[R_{o^0_{j}}|\bm{\rho}^0, \alpha^0] < j$}\\		
+Similarly, if $n$ is even, i.e. $n = 2m$, 
+
 	\item{$\forall j \in [1, m-1]$, $j< \mathbb{E}[R_{o^0_j}|\bm{\rho}^0, \alpha^0] <\mathbb{E}[R_{o^0_{j+1}}|\bm{\rho}^0, \alpha^0]$}
 	\item{$\forall j \in [m+2, 2m]$, $\mathbb{E}[R_{o^0_{j-1}}|\bm{\rho}^0, \alpha^0] <\mathbb{E}[R_{o^0_{j}}|\bm{\rho}^0, \alpha^0] < j$}
 \end{enumerate}
-Note that for both cases, it satisfies that $\forall 1\leq j<k\leq n$ and $\forall \alpha > 0 $,
+For both cases, $\forall 1\leq j<k\leq n$ and $\forall \alpha > 0 $,
 {$\mathbb{E}[R_{o^0_j}|\bm{\rho}^0, \alpha^0]<\mathbb{E}[R_{o^0_k}|\bm{\rho}^0, \alpha^0]$}
 \end{lemma}
 
 \begin{lemma}\label{lem:largenumbers}
- As $N \rightarrow \infty$, $\frac{1}{N}\sum\limits_{j=1}^{N}R^j_i \rightarrow \mathbb{E}[R_i|\bm{\rho}^0, \alpha ^0]$, $\forall i = 1, ..., n$
+ Let $\bm{R}^j$ be distributed according to $Mallows (\bm{\rho}^0, \alpha^0)$, for $j = 1, ...,N$, independently, as $N \rightarrow \infty$, $\frac{1}{N}\sum\limits_{j=1}^{N}R^j_i \rightarrow \mathbb{E}[R_i|\bm{\rho}^0, \alpha ^0]$, $\forall i = 1, ..., n$
 \end{lemma}
 
 \begin{mydef}
-Given a vector of length $n$, i.e. \{$x_1, ..., x_n$\},the function $rank(x_1, ..., x_n)$ is defined as $rank(x_1, ..., x_n) = \{r_1, ..., r_n\}$ such that $x_{(r_k)} = x_k$, $\forall k = 1, ..., n$
+The vector of ranks $\{r_1, ..., r_n \}  \in \mathcal{P}_n$ of a vector of real numbers $\{x_1, ..., x_n \}$, denoted as $rank(x_1, ..., x_n)$, is defined by $r_i(x_1, ..., x_n) = \sum\limits_{j=1}^{n}\delta (x_i - x_j)$, where 
+$
+\delta(x) = \left \{
+\begin{aligned}
+&1, && \text{if } x\geq 0 \\
+&0, && \text{if } x < 0
+\end{aligned} \right.
+$, for $i = 1, ..., n$.
 \end{mydef} 
 \begin{theorem}\label{theorem:inferrho}
 As $N \rightarrow \infty$, and $\forall \alpha > 0$, \\ $rank({1\over N}\sum\limits_{j=0}^{N}R_1^j,...,{1\over N}\sum\limits_{j=0}^{N}R_n^j) \rightarrow rank(\mathbb{E}[{R}_1|\bm{\rho}^0, \alpha_0],...,\mathbb{E}[{R}_n|\bm{\rho}^0, \alpha_0]) =\bm{\rho}^0 $
@@ -133,18 +137,19 @@ As $N \rightarrow \infty$, and $\forall \alpha > 0$, \\ $rank({1\over N}\sum\lim
 
 To rephrase, as $N$ approaches infinity, the Mallows consensus parameter $\bm{\rho}^0$ can be inferred from the data by taking the marginal mean for each item and then apply the rank function to these marginal means.
 \subsection{ }
+\begin{mydef}{
+Let $\mathcal{V}_{\rho^0}$ be a set of permutations, determined by $\rho^0$, in the following way. If $n$ is odd:
+ $\mathcal{V}_{\rho^0} = \{\bm{r}\in \mathcal{P}_n: r_{o^0_m} = 1; (r_{o^0_{m-k}},r_{o^0_{m+k}}) = (2k, 2k+1) $ or $ (2k+1, 2k)$, $k = 1, ..., m-1\}$. \\
+ If $n$ is even,  $\mathcal{V}_{\rho^0} = \{\bm{r}\in \mathcal{P}_n:(r_{o^0_{m-k}},r_{o^0_{m+k+1}}) = (2k+1, 2k+2) $ or $ (2k+2, 2k+1)$, $k = 0, ..., m-1\}$.
+
+}
+\end{mydef}
 \begin{theorem}\label{theorem:V}
-	For a function $g$ defined on $\mathcal{P}_n$ which can depend on $\bm{\rho}^0$, for any given $n$ and $\alpha^0 > 0$,
+Let	$\mathcal{D}_{\bm{\rho}^0}$ be the set of all distrbutions on $\mathcal{P}_n, \text{which can depend on } \bm{\rho}^0$. For a function $g$ defined on $\mathcal{P}_n$ which can depend on $\bm{\rho}^0$, for any given $n$ and $\alpha^0 > 0$, it holds that
 
  $\operatorname*{arg\,min}\limits_{g\in\mathcal{D}_{\bm{\rho}^0}}\lim\limits_{N \rightarrow \infty} KL (P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g(i_1,...,i_n|\bm{\rho}^0)$ \\
-= $g^*(i_1,...,i_n|\mathcal{V}_{{\bm{\rho}}^0})$, \\ 
-where r
-\begin{itemize}
-	\item{
-		$\mathcal{D}_{\bm{\rho}^0}$ is the set of all distrbutions on $\mathcal{P}_n, \text{which can depend on } \bm{\rho}^0$ 
-	}
-	\item{
-		$g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0})$ is a distribution whose density is concentrated on $\bm{\rho}^0$, defined as \\
+= $g^*(i_1,...,i_n|\mathcal{V}_{{\bm{\rho}}^0})$, \\where
+		$g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0})$ is a distribution whose density is concentrated on $\mathcal{V}_{\bm{\rho}^0}$, defined as \\
 		  $
 		\left \{
 		\begin{aligned}
@@ -158,77 +163,64 @@ where r
 			&2^m, && \text{otherwise}
 			\end{aligned} \right.
 			$
-	}
-
-\end{itemize}
 
 \end{theorem}
-That is to say, for a set of distributions $g$, which are defined on the space of permutation of $n$ items $\mathcal{P}_n$, as the number of users $N \rightarrow \infty$, the distribution $g^*$ that minimizes the KL-divergence betweeeh the Mallows posterior and the pseudolikelihood defined above, is a uniform distribution with its density concentrated on $\mathcal{V}_{\bm{\rho}^o}$
+As the number of users $N \rightarrow \infty$, the distribution $g^*$ that minimizes the KL-divergence between the Mallows posterior and the pseudolikelihood based on $g$, is the uniform distribution concentrated on $\mathcal{V}_{\bm{\rho}^o}$
 
 \subsection{ }
-For a given $N < \infty$, define $\hat{\bm{\rho}}^0$ as $rank({1\over N}\sum\limits_{j=0}^{N}R_1^j, ..., {1\over N}\sum\limits_{j=0}^{N}R_n^j)$ and  $\mathcal{V}_{\hat{\bm{\rho}}^0} = f_v(\hat{\bm{\rho}}^0)$. 
+For a given finite $N < \infty$, define $\hat{\bm{\rho}}^0$ = $rank({1\over N}\sum\limits_{j=0}^{N}R_1^j, ..., {1\over N}\sum\limits_{j=0}^{N}R_n^j)$ and  $\mathcal{V}_{\hat{\bm{\rho}}^0}$, 
 
 \begin{theorem} \label{theorem:gaussiannoise}
 
 $\exists\sigma \geq 0$ and $g'(i_1, ..., i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma)$ such that 
 
- KL $(P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g^{*}(i_1,...,i_n|\mathcal{V}_{\hat{\bm{\rho}}^0)}\geq $\\
- KL $(P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g'(i_1,...,i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma)$\\
+ KL $\Big(P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g^{*}(i_1,...,i_n|\mathcal{V}_{\hat{\bm{\rho}}^0})\Big)\geq $\\
+ KL $\Big(P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g'(i_1,...,i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma)$\Big)\\
 
  where 
- $g'(i_1, ..., i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma) = \sum\limits_{\hat{\bm{v}}\in \mathcal{V}_{\hat{\bm{\rho}}^0}}\{ g^* (\hat{\bm{v}}|\mathcal{V}_{\hat{\bm{\rho}}^{0}}) \int_{\bm{x}}\mathcal{F}_r(i_1,..., i_n|x_1, ...,x_n)\prod\limits_{i=1}^{n}\mathcal{N}(x_i|\hat{v}_i, \sigma)d\bm{x}\}$,
- and
- 
+ $g'(i_1, ..., i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma) $ is defined as 
  \begin{itemize}
  	\item {$\hat{\bm{v}} \sim g^* (\hat{\bm{v}}|\mathcal{V}_{\hat{\bm{\rho}^{0}}})$}
   	\item {$x_i\sim \mathcal{N}(x_i|\hat{v}_i, \sigma)$} for $i = 1,...,n $
- 	\item {$i_1, ..., i_n \sim \mathcal{F}_r(i_1, ..., i_n|x_1, ..., x_n)$}, where $
- 	\mathcal{F}_r = \left \{
- 	\begin{aligned}
- 	&1, && \text{if } \{i_1, ..., i_n\} = rank(x_1, ..., x_n) \\
- 	&0, && \text{otherwise}
- 	\end{aligned} \right.
- 	$
- 
+ 	\item {$i_1, ..., i_n = rank(x_1, ..., x_n)$ }. 
  \end{itemize}
  	
 \end{theorem} 
-As $N$ is limited, $\bm{\rho}^0$ and therefore, $\mathcal{V}_{\bm{\rho}^0}$ usually cannot be accurately inferred from the data. We can however, sample for $i_1, ..., i_n$ by sampling for each item $i$ from a univariate Gaussian distribution centeredd on $\hat{v}_i$ with a fixed variance $\sigma$ for all items, and then obtain a ranking using the rank function. By introducing the variance, a smaller KL divergence from the Mallows posterior can be achieved.
+As $N$ is finite, $\bm{\rho}^0$ and therefore, $\mathcal{V}_{\bm{\rho}^0}$ usually cannot be accurately inferred from the data. We can however, sample $i_1, ..., i_n$ by sampling each item $i$ from a univariate Gaussian distribution centered on $\hat{v}_i$ with a fixed variance $\sigma$ for all items, and then obtain their ranking using the rank function. By introducing the variance, a smaller KL divergence of the pseudolikelihood from the Mallows posterior can be achieved.
  
 \subsection{ }
 \begin{theorem}\label{theorem:sigmafunction}
-With the usage of  $g'(i_1, ...,i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma)$, the value of $\sigma$ that minimizes the KL-divergence between the Mallows posterior and the resulted pseudolikelihood is\\
+With the use of  $g'(i_1, ...,i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma)$, the value of $\sigma$ that minimizes the KL-divergence between the Mallows posterior and the resulting pseudolikelihood is\\
  $
 \sigma = \left \{
 \begin{aligned}
 &0, && \text{if } \delta(\alpha^0,n,N)\leq \delta ^{*} \\
 &f(\alpha^0, n,N), && \text{otherwise}
 \end{aligned} \right.
-$, where $\frac{\partial f}{\partial \alpha^0} <0, \frac{\partial f}{\partial N} <0$, and $\frac{\partial f}{\partial n} >0$.
-
+$, where $\frac{\partial f}{\partial \alpha^0} <0, \frac{\partial f}{\partial N} <0$, and $\frac{\partial f}{\partial n} >0$, where $\delta(\alpha^0, n,N)$ is a specific function of $\alpha^0$, $n$, $N$ and $\delta ^*$ is a threshold.
 \end{theorem}
 
-In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \geq \delta^*$. Beyond this point, the optimal choice of $\sigma$ should be greater than 0, and it follows a function $f(\alpha^0,n,N)$, which increases as $n$ increases, and decreases as $\alpha^0$ and $N$ increase.
-
-\subsection{ }
-\begin{theorem}
-	As $N \rightarrow \infty,\sigma = 0$  $ \forall \alpha >0$ and $n \geq 1$
-\end{theorem}
+In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \leq \delta^*$. Beyond this point, the optimal choice of $\sigma$ should be greater than 0, and it follows a function $f(\alpha^0,n,N)$, which increases as $n$ increases, and decreases as $\alpha^0$ and $N$ increase.
+\begin{corollary}
+	As $N \rightarrow \infty,\sigma \rightarrow 0$  $ \forall \alpha >0$ and $n \geq 1$
+\end{corollary}
 
 \section{Evidence and proofs}
 \subsection{Evidence for Theorem \ref{theorem:V}}
-In this experiment, we first simulate a dataset of $N$ users and $n$ items with different choices of $\alpha^0$ by drawing from the Mallows distribution.  50 datasets are generated for each scenario. We have chosen $N = 2000$ so that it is sufficiently large and the characteristics as $N \rightarrow \infty$ can be simulated. As shown in \textbf{Figure} \ref{fig:boxPlots}, we have selected several different choices of $g$ functions for the pseudolikelihoods, and we compare their KL-divergences with the Mallows posterior. The different $g$ functions, following the sequence displayed in \textbf{Figure} \ref{fig:boxPlots}, are chosen as below:
+In this experiment, we first simulate a dataset of $N$ users and $n$ items with different choices of $\alpha^0$ by drawing from the Mallows distribution.  50 datasets are generated for each scenario. We have chosen $N = 2000$ so that it is sufficiently large and the characteristics as $N \rightarrow \infty$ can be simulated. As shown in \textbf{Figure} \ref{fig:boxPlots}, we have selected several different choices of $g$ functions for the pseudolikelihoods, and we compare their KL-divergences with the Mallows posterior. \textcolor{red}{Due to the difficulty of computing the KL-divergence between two distributions on the space of permutation $\mathcal{P}_n$, we instead compute the KL-divergence between the Mallows posterior and the pseudolikelihood's marginal distribution of each item, and we take the sum of all items' marginal KL-divergences. All the KL-divergences used in the following text are computed in this manner.} 
+
+The different $g$ functions, following the sequence displayed in \textbf{Figure} \ref{fig:boxPlots}, are chosen as below:
 \begin{itemize}
-	\item {V: at each iteration, we sample one V-ranking \{$i_1, ...,i_n$\} from $g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0}))$}
-	\item {opp\_V: at each iteration, we first sample one V-ranking \{$i_1, ...,i_n$\}, and then for each V-ranking, we generate the opposite V-ranking \{$n+1 - i_1, ..., n+1 - i_n$\}}
+	\item {V: at each iteration, we sample one V-ranking \{$i_1, ...,i_n$\} from $g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0}))$, using a $\bm{\rho}^0$ estimated from the data}
+	\item {opp\_V: at each iteration, we first sample one V-ranking \{$i_1, ...,i_n$\} from $g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0}))$, using a $\bm{\rho}^0$ estimated from the data, but then we generate the opposite V-ranking \{$n+1 - i_1, ..., n+1 - i_n$\}}
 	\item {1\_n\_swap: at each iteration, we first fix the ranking to be \{1,2,...,n\}, and then conduct 5 swapping steps}
 	\item {n\_1\_swap: we first fix the ordering to be \{n, n-1, ...,1\}, and then conduct 5 swapping steps at each iteration}
-	\item {low\_std\_swap: we first compute each item's standard deviation in the dataset and then rank them in ascending order. At each iteration, we conduct 5 swapping steps at each iteration based on this ranking }
+	\item {low\_std\_swap: we first compute each item's rank's standard deviation in the dataset and then rank them in ascending order according to this standard deviation. At each iteration, we conduct 5 swapping steps at each iteration based on this ranking }
 	\item {high\_std\_swap: similar to low\_std\_swap, except that the standard deviations are ranked in descending order}
 	\item{uniform: at each iteration, a ranking is drawn uniformly from $\mathcal{P}_n$}
 \end{itemize}
 
-It can be observed from \textbf{Figure} \ref{fig:boxPlots} that as $N$ increases, the ``V-rankings'' performs more and more superior compared to all the other $g$ functions. When $N = 2000$, asymptotic characteristics can be clearly observed, and as shown in the last row of \textbf{Figure} \ref{fig:boxPlots}, it consistently performs more superior compared to other choices. Expectedly, the opposite-V rankings' performance the most inferior. However, it is noteworthy to mention that in order to preserve the characteristics of $N \rightarrow \infty$, the required $N$ is larger for the situations when $n$ is large, and/or when $\alpha^0$ is small.
+It can be observed from \textbf{Figure} \ref{fig:boxPlots} that as $N$ increases, the ``V-rankings'' performs more and more superior compared to all the other $g$ functions. When $N = 2000$, asymptotic characteristics can be clearly observed, and as shown in the last row of \textbf{Figure} \ref{fig:boxPlots}, it consistently performs better compared to other choices. Expectedly, the opposite-V rankings' performance is the worst. However, it is noteworthy to mention that the asymptotic \textcolor{red}{? regime starts for larger $N$, for the situations when $n$ is large, and/or when $\alpha^0$ is small.} %in order to preserve the characteristics of $N \rightarrow \infty$, the required $N$ is larger 
 
 \begin{figure}[h!]
 	\begin{minipage}[t]{.23\textwidth}
@@ -307,7 +299,7 @@ It can be observed from \textbf{Figure} \ref{fig:boxPlots} that as $N$ increases
 	\label{fig:boxPlots}
 \end{figure}
 
-Some selected heat plots are shown in \textbf{Figure}\ref{fig:heatPlot_comparison_g}. It can be clearly observed that the V-ranking is the optimal choice here. 
+Some selected heat plots which contains the Mallows posterior distribution and the pseuolikelihood with different choices of $g$ functions are shown in \textbf{Figure}\ref{fig:heatPlot_comparison_g}.  It can be clearly observed that the V-ranking is the optimal choice here. We also see here that the pseudolikelihod approximation based on $g^*$ also gives good results in terms of being very close to the true posterior.
 \begin{figure}[h!]
 
 		\begin{minipage}[t]{.45\textwidth}
@@ -342,7 +334,7 @@ Some selected heat plots are shown in \textbf{Figure}\ref{fig:heatPlot_compariso
 \subsection{Evidence for Theorem \ref{theorem:gaussiannoise}}
 In \textbf{Figure} \ref{fig:sigmafunction}, for each subfigure, we calculate and plot the KL-divergences between the Mallows posterior and the pseudo-likelihood, computed with different choices of $\sigma$. The left-most point on each sub-figure corresponds to the KL-divergence when no Gausian variation is introduced, i.e. $\sigma = 0$. It can be observed that for most situations shown in the figure, the lowest KL-divergence is achieved when some level of Gaussian variation is introduced, especially as $N$ and $\alpha^0$ are relatively small. However, as $N$ and $\alpha^0$ increase, the optimal $\sigma$ appears to decrease towards 0. 
 
-\textbf{Figure} \ref{fig:heatPlot_comparison} contains a few heat plot examples. The first column are heat plots of the Mallows posterior, the middle and right columns contain heat plots of the pseudolikelihood with and without Gaussian variations. It can be observed that introducing the Gaussian variation can reduce the KL divergence between the Mallows posterior and the pseudolikelihood. This is largely due to the fact that since the true ``V-ranking'' cannot be accurately inferred from the data as $N$ is limited, we need to introduce some variation around the inferred ``V'' ranking in order to mitigate the inaccuracy.
+\textbf{Figure} \ref{fig:heatPlot_comparison} contains a few heat plot examples. The first column are heat plots of the Mallows posterior, the middle and right columns contain heat plots of the pseudolikelihood with and without Gaussian variations. It can be observed that introducing the Gaussian variation can reduce the difference between the Mallows posterior and the pseudolikelihood. This is largely due to the fact that since the true ``V-ranking'' cannot be accurately inferred from the data as $N$ is limited, we need to introduce some variation around the inferred ``V'' ranking in order to mitigate the inaccuracy.
 
 \begin{figure}[h!]
 		\subfigure[]{
@@ -428,7 +420,7 @@ As shown in \textbf{Figure} \ref{fig:sigmafunction}, in each subfigure, the $\si
 \label{fig:sigmafunction}
 \end{figure}
 
-For each $N$, $n$ and $\alpha^0$, we simulate 10 datasets, and for each dataset, a grid of $\sigma$ values are tried out. In \textbf{Figure }\ref{fig:optimSigma}, we plot $\alpha^0$ on the x-axis, and its corresponded optimal $\sigma$ on the y-axis. It can be observed that when $\alpha^0$ and $N$ are large, and $n$ is small, all $\sigma$ values result in small KL-divergence. To simplify, in these situations, we can safely set $\sigma = 0$ to achieve small KL-divergence. As $N$ and $\alpha^0$ decreases and as $n$ increases, optimal $\sigma$ increases.
+For each $N$, $n$ and $\alpha^0$, we simulate 10 datasets, and for each dataset, a grid of $\sigma$ values are tried out. In \textbf{Figure }\ref{fig:optimSigma}, we plot $\alpha^0$ on the x-axis, and its corresponded optimal $\sigma$ on the y-axis. It can be observed that up to a value $\delta ^*$, which increases as $N$ and $\alpha^0$ increase and decreases as $n$ increases, the lowest KL-divergence can be achieved by setting $\sigma$ to be 0. Beyond this point, the optimal $\sigma$ follows a function $f(\alpha^0, n,N)$, which increases as $N$ and $\alpha^0$ decreases and as $n$ increases.
 \begin{figure}[h!]
 		\subfigure[]{
 		\includegraphics[width=\linewidth]{figures/2_4_sameN200diffn.pdf}\label{fig_optimSigma_diff_n}}
