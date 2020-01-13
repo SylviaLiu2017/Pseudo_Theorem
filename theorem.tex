@@ -213,16 +213,18 @@ In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \leq \delta^*$. 
 In this experiment, we first simulate a dataset of $N$ users and $n$ items with different choices of $\alpha^0$ by drawing from the Mallows distribution.  50 datasets are generated for each scenario. We have chosen $N = 2000$ so that it is sufficiently large and the characteristics as $N \rightarrow \infty$ can be simulated. As shown in \textbf{Figure} \ref{fig:boxPlots}, we have selected several different choices of $g$ functions for the pseudolikelihoods, and we compare their KL-divergences with the Mallows posterior. \textcolor{red}{Due to the difficulty of computing the KL-divergence between two distributions on the space of permutation $\mathcal{P}_n$, we instead compute }
 \begin{center}
 
- $\sum\limits_{i=1}^{n}\text{KL}\big( p(\rho_i|\alpha^0, \bm{R}^1,..., \bm{R}^N) || \sum\limits_{\{i_1, ..., i_n\}\in \mathcal{P}_n}q(\tilde{{\rho}}_i|\alpha^0, \bm{R}^1, ..., \bm{R}^N, i_1, ..., i_n)g(i_1, ..., i_n|\bm{\rho^0})\big)$, \end{center}\textcolor{red}{i.e., the KL-divergence between the Mallows posterior and the pseudolikelihood's marginal distribution of each item, and then take the sum over all items. All the KL-divergences used in the following texts are computed in this manner.} 
+ $\sum\limits_{i=1}^{n}\text{KL}\big( p(\rho_i|\alpha^0, \bm{R}^1,..., \bm{R}^N) || \sum\limits_{\{i_1, ..., i_n\}\in \mathcal{P}_n}q(\tilde{{\rho}}_i|\alpha^0, \bm{R}^1, ..., \bm{R}^N, i_1, ..., i_n)g(i_1, ..., i_n|\bm{\rho^0})\big)$, \end{center}\textcolor{red}{i.e., the KL-divergence between the Mallows posterior and the pseudolikelihood's marginal distributions of each item, and then take the sum over all items. All the KL-divergences used in the following texts are computed in this manner.} 
 
 The different $g$ functions, following the sequence displayed in \textbf{Figure} \ref{fig:boxPlots}, are chosen as below:
 \begin{itemize}
 	\item {V: at each iteration, we sample one V-ranking \{$i_1, ...,i_n$\} from $g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0}))$, using a $\bm{\rho}^0$ estimated from the data}
 	\item {opp\_V: at each iteration, we first sample one V-ranking \{$i_1, ...,i_n$\} from $g^*(i_1, ..., i_n | \mathcal{V}_{\bm{\rho}^0}))$, using a $\bm{\rho}^0$ estimated from the data, but then we generate the opposite V-ranking \{$n+1 - i_1, ..., n+1 - i_n$\}}
+	\item{low\_std\_no\_swap: we first compute each item's rank's standard deviation in the dataset and then rank them in ascending order according to this standard deviation. The rationale behind this is that we hypothesize that items that we are more sure of, hence the items with low standard deviations, should be sampled first}
+	\item {low\_std\_swap:  we first compute a ranking using low\_std\_no\_swap, and then at each iteration, we conduct 5 swapping steps at each iteration based on this ranking to create some variations }
+	\item {high\_std\_swap: similar to low\_std\_swap, except that the standard deviations are ranked in descending order}
+	
 	\item {1\_n\_swap: at each iteration, we first fix the ranking to be \{1,2,...,n\}, and then conduct 5 swapping steps}
 	\item {n\_1\_swap: we first fix the ordering to be \{n, n-1, ...,1\}, and then conduct 5 swapping steps at each iteration}
-	\item {low\_std\_swap: we first compute each item's rank's standard deviation in the dataset and then rank them in ascending order according to this standard deviation. At each iteration, we conduct 5 swapping steps at each iteration based on this ranking }
-	\item {high\_std\_swap: similar to low\_std\_swap, except that the standard deviations are ranked in descending order}
 	\item{uniform: at each iteration, a ranking is drawn uniformly from $\mathcal{P}_n$}
 \end{itemize}
 
@@ -305,7 +307,7 @@ It can be observed from \textbf{Figure} \ref{fig:boxPlots} that as $N$ increases
 	\label{fig:boxPlots}
 \end{figure}
 
-Some selected heat plots which contains the Mallows posterior distribution and the pseuolikelihood with different choices of $g$ functions are shown in \textbf{Figure}\ref{fig:heatPlot_comparison_g}.  It can be clearly observed that the V-ranking is the optimal choice here. We also see here that the pseudolikelihod approximation based on $g^*$ also gives good results in terms of being very close to the true posterior.
+Some selected heat plots which contains the Mallows posterior distribution and the pseuolikelihood with different choices of $g$ functions are shown in \textbf{Figure }\ref{fig:heatPlot_comparison_g}.  It can be clearly observed that the V-ranking is the optimal choice here. We also see here that the pseudolikelihod approximation based on $g^*$ also gives good results in terms of being very close to the true posterior.
 \begin{figure}[h!]
 
 		\begin{minipage}[t]{.45\textwidth}
