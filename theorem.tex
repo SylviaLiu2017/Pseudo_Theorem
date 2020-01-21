@@ -47,7 +47,7 @@
 	$}
 	
 	\item{$\mathcal{P}_n$: the space of permutation of $n$ integers}
-	\item {$\bm{R}^1,...,\bm{R}^N$: full rankings given by the users}
+	\item {$\bm{R}^1,...,\bm{R}^N$: full rankings given by the $N$ users}
 	
 	
 	\item {$\bm{R}^j \in \mathcal{P}_n$= \{$R^j_1,...,R^j_n$\} $\sim$ Mallows($\bm{\rho}^0, \alpha^0$), defined as 
@@ -62,21 +62,21 @@
 	\item{ \{$o_1, ..., o_n$\}: an ordering of $n$ items that corresponds to \{$i_1, ..., i_n$\} s.t. $i_{o_k} = k$ }. $\{o_1, ...,o_n\}$ and \{$i_1, ..., i_n$\} have a one-to-one relationship
 	
 	%pseudo components 
-	\item {Let $g(i_1, ..., i_n)$ be any probability density over $\mathcal{P}_n$. \\$Q(\tilde{\bm{\rho}}|\bm{R}^1, ..., \bm{R}^N, \alpha^0)$=$\sum\limits_{\{i_1, ..., i_n \}\in \mathcal{P}_n }q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha^0, \bm{R}^1, ...,\bm{R}^N) \cdot g(i_1, ..., i_n)$ : pseudolikelihood for $\tilde{\bm{\rho}} \in \mathcal{P}_n$, which approximates the Mallows posterior}
+	\item {Let $g(i_1, ..., i_n)$ be any probability density over $\mathcal{P}_n$. \\$Q({\bm{\rho}}|\bm{R}^1, ..., \bm{R}^N, \alpha^0)$=$\sum\limits_{\{i_1, ..., i_n \}\in \mathcal{P}_n }q({\bm{\rho}}|i_1, ..., i_n, \alpha^0, \bm{R}^1, ...,\bm{R}^N) \cdot g(i_1, ..., i_n)$ : pseudolikelihood for ${\bm{\rho}} \in \mathcal{P}_n$, which approximates the Mallows posterior}
 	
-	\item {$q(\tilde{\bm{\rho}}|i_1, ..., i_n, \alpha^0, \bm{R}^1, ..., \bm{R}^N)  = q(\tilde{\bm{\rho}}|o_1, ..., o_n, \alpha^0, \bm{R}^1, ..., \bm{R}^N)  \\
-		=q(\tilde{\rho}_{o_1}|\alpha^0,o_1, R^1_{o_1},...,R^N_{o_1}) \cdot
-		q(\tilde{\rho}_{o_2}|\alpha^0,o_2,\tilde{\rho}_{o_1} R^1_{o_2},...,R^N_{o_2}) \cdot
+	\item {$q({\bm{\rho}}|i_1, ..., i_n, \alpha^0, \bm{R}^1, ..., \bm{R}^N)  = q({\bm{\rho}}|o_1, ..., o_n, \alpha^0, \bm{R}^1, ..., \bm{R}^N)  \\
+		=q({\rho}_{o_1}|\alpha^0,o_1, R^1_{o_1},...,R^N_{o_1}) \cdot
+		q({\rho}_{o_2}|\alpha^0,o_2,{\rho}_{o_1} R^1_{o_2},...,R^N_{o_2}) \cdot
 		... \cdot \\
-		q(\tilde{\rho}_{o_{n-1}}|\alpha^0,o_{n-1}, \tilde{\rho}_{o_1},...,\tilde{\rho}_{o_{n-2}}, R^1_{n-1},...,R^N_{n-1}) \cdot
-		q(\tilde{\rho}_{o_{n}}|\alpha^0,o_{n}, \tilde{\rho}_{o_1},...,\tilde{\rho}_{o_{n-1}}, R^1_n, ..., R^N_n)$}
+		q({\rho}_{o_{n-1}}|\alpha^0,o_{n-1}, {\rho}_{o_1},...,{\rho}_{o_{n-2}}, R^1_{n-1},...,R^N_{n-1}) \cdot
+		q({\rho}_{o_{n}}|\alpha^0,o_{n}, {\rho}_{o_1},...,{\rho}_{o_{n-1}}, R^1_n, ..., R^N_n)$}
 
-	where {	$ {q(\tilde{\rho}_{o_1}|\alpha^0, o_1,R^1_{o_1}, ...,R^N_{o_1}) }
-	= \frac{\text{exp}\{- \frac{\alpha^0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_1}, \tilde{\rho}_{o_1})\}}
-	{\sum\limits_{\tilde{r}_{o_1}\in \{1, .., n\}}\text{exp}\{- \frac{\alpha^0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_1}, \tilde{r}_{o_1})\}} $}, ${\tilde{\rho}_{o_1}\in \{1, ...,n\}}$, and where {
-	$ {q(\tilde{\rho}_{o_k}|\alpha^0, o_k, \tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}},R^1_{o_k}, ...,R^N_{o_k}) }
-	= \frac{\text{exp}\{- \frac{\alpha^0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_k}, \tilde{\rho}_{o_k})\}}
-	{\sum\limits_{\tilde{r}_{o_k}\in \{1, .., n\}\textbackslash \{\tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}}\}}\text{exp}\{- \frac{\alpha^0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_k}, \tilde{r}_{o_k})\}} $}, ${\tilde{\rho}_{o_k}\in\{1, .., n\}\textbackslash \{\tilde{\rho}_{o_1}, ..., \tilde{\rho}_{o_{k-1}}\}}$,  for $k = 2, ..., n$
+	where {	$ {q({\rho}_{o_1}|\alpha^0, o_1,R^1_{o_1}, ...,R^N_{o_1}) }
+	= \frac{\text{exp}\{- \frac{\alpha^0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_1}, {\rho}_{o_1})\}}
+	{\sum\limits_{{r}_{o_1}\in \{1, .., n\}}\text{exp}\{- \frac{\alpha^0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_1}, {r}_{o_1})\}} $}, ${{\rho}_{o_1}\in \{1, ...,n\}}$, and where {
+	$ {q({\rho}_{o_k}|\alpha^0, o_k, {\rho}_{o_1}, ..., {\rho}_{o_{k-1}},R^1_{o_k}, ...,R^N_{o_k}) }
+	= \frac{\text{exp}\{- \frac{\alpha^0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_k}, {\rho}_{o_k})\}}
+	{\sum\limits_{{r}_{o_k}\in \{1, .., n\}\textbackslash \{{\rho}_{o_1}, ..., {\rho}_{o_{k-1}}\}}\text{exp}\{- \frac{\alpha^0}{n}\sum\limits_{j=1}^{N}d(R^j_{o_k}, {r}_{o_k})\}} $}, ${{\rho}_{o_k}\in\{1, .., n\}\textbackslash \{{\rho}_{o_1}, ..., {\rho}_{o_{k-1}}\}}$,  for $k = 2, ..., n$
 
 
 
@@ -150,7 +150,7 @@ Let $\mathcal{V}_{\rho^0}$ be a set of permutations, determined by $\rho^0$, in 
 \begin{theorem}\label{theorem:V}
 Let	$\mathcal{D}_{\bm{\rho}^0}$ be the set of all distributions on $\mathcal{P}_n, \text{which can depend on } \bm{\rho}^0$. For a function $g\big((i_1, ..., i_n)|\bm{\rho}^0\big)\in\mathcal{D}_{\bm{\rho}^0}$ and for any given $n$, $\alpha^0 > 0$, it holds that
 
- $\operatorname*{arg\,min}\limits_{g\in\mathcal{D}_{\bm{\rho}^0}}\lim\limits_{N \rightarrow \infty} KL (P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g(i_1,...,i_n|\bm{\rho}^0)$ \\
+ $\operatorname*{arg\,min}\limits_{g\in\mathcal{D}_{\bm{\rho}^0}}\lim\limits_{N \rightarrow \infty} KL (P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q ({\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g(i_1,...,i_n|\bm{\rho}^0)$ \\
 = $g^*(i_1,...,i_n|{{\bm{\rho}}^0})$, \\where
 		$g^*(i_1, ..., i_n |{\bm{\rho}^0})$ is a distribution whose density is concentrated on $\mathcal{V}_{\bm{\rho}^0}$, defined as \\
 		  $
@@ -177,13 +177,13 @@ For a given finite $N < \infty$, define $\hat{\bm{\rho}}^0$ = $rank({1\over N}\s
 
 $\exists\sigma \geq 0$ and $g'(i_1, ..., i_n|{\hat{\bm{\rho}}^0}, \sigma)$ such that 
 
- KL $\Big(P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g^{*}(i_1,...,i_n|{\hat{\bm{\rho}}^0})\Big)\geq $\\
- KL $\Big(P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q (\tilde{\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g'(i_1,...,i_n|{\hat{\bm{\rho}}^0}, \sigma)$\Big)\\
+ KL $\Big(P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q ({\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g^{*}(i_1,...,i_n|{\hat{\bm{\rho}}^0})\Big)\geq $\\
+ KL $\Big(P(\bm{\rho}|\alpha^0, \bm{R}^1, ...,\bm{R}^N ) || \sum\limits_{\{i_1,..., i_n\} \in \mathcal{P}_n} q ({\bm{\rho}}|\alpha^0, \bm{R}^1,..., \bm{R}^N, i_1,...,i_n) g'(i_1,...,i_n|{\hat{\bm{\rho}}^0}, \sigma)$\Big)\\
 
  where 
  $g'(i_1, ..., i_n|{\hat{\bm{\rho}}^0}, \sigma) $ is defined as 
  \begin{itemize}
- 	\item {$\hat{\bm{v}} \sim g^* (\hat{\bm{v}}|{\hat{\bm{\rho}^{0}}})$}
+ 	\item {$\hat{\bm{v}} \sim g^* (\hat{\bm{v}}|{\hat{\bm{\rho}}^{0}})$}
   	\item {$x_i\sim \mathcal{N}(x_i|\hat{v}_i, \sigma)$} for $i = 1,...,n $
  	\item {$i_1, ..., i_n = rank(x_1, ..., x_n)$ }. 
  \end{itemize}
@@ -200,7 +200,13 @@ With the use of  $g'(i_1, ...,i_n|\mathcal{V}_{\hat{\bm{\rho}}^0}, \sigma)$, the
 &0, && \text{if } \delta(\alpha^0,n,N)\leq \delta ^{*} \\
 &f(\alpha^0, n,N), && \text{otherwise}
 \end{aligned} \right.
-$, where $\frac{\partial f}{\partial \alpha^0} <0, \frac{\partial f}{\partial N} <0$, and $\frac{\partial f}{\partial n} >0$, where $\delta(\alpha^0, n,N)$ is a specific function of $\alpha^0$, $n$, $N$ and $\delta ^*$ is a threshold.
+$, where 
+\begin{enumerate}
+	\item{$\frac{\partial f}{\partial \alpha^0} <0, \frac{\partial f}{\partial N} <0$, and $\frac{\partial f}{\partial n} >0$}
+	\item{$\delta(\alpha^0, n,N)$ is a specific function of $\alpha^0$}
+	\item{$\delta ^*$ is a threshold}
+	
+\end{enumerate}
 \end{theorem}
 
 In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \leq \delta^*$. Beyond this point, the optimal choice of $\sigma$ should be greater than 0, and it follows a function $f(\alpha^0,n,N)$, which increases as $n$ increases, and decreases as $\alpha^0$ and $N$ increase.
@@ -210,10 +216,10 @@ In other words, $\sigma$ should be 0 when $\delta(\alpha^0,n,N) \leq \delta^*$. 
 
 \section{Evidence and proofs}
 \subsection{Evidence for Theorem \ref{theorem:V}}
-In this experiment, we first simulate a dataset of $N$ users and $n$ items with different choices of $\alpha^0$ by drawing from the Mallows distribution.  50 datasets are generated for each scenario. We have chosen $N = 2000$ so that it is sufficiently large and the characteristics as $N \rightarrow \infty$ can be simulated. As shown in \textbf{Figure} \ref{fig:boxPlots}, we have selected several different choices of $g$ functions for the pseudolikelihoods, and we compare their KL-divergences with the Mallows posterior. \textcolor{red}{Due to the difficulty of computing the KL-divergence between two distributions on the space of permutation $\mathcal{P}_n$, we instead compute }
+In this experiment, we first simulate a dataset of $N$ users and $n$ items with different choices of $\alpha^0$ by drawing from the Mallows distribution.  50 datasets are generated for each scenario. We have chosen $N = 500, 1000,2000$ so we can gradually simulate the asymptotic-like characteristics. As shown in \textbf{Figure} \ref{fig:boxPlots}, we have selected several different choices of $g$ functions for the pseudolikelihoods, and we compare their KL-divergences with the Mallows posterior. {Due to the difficulty of computing the KL-divergence between two distributions that are defined on the space of permutation $\mathcal{P}_n$, we instead compute }
 \begin{center}
 
- $\sum\limits_{i=1}^{n}\text{KL}\big( p(\rho_i|\alpha^0, \bm{R}^1,..., \bm{R}^N) || \sum\limits_{\{i_1, ..., i_n\}\in \mathcal{P}_n}q(\tilde{{\rho}}_i|\alpha^0, \bm{R}^1, ..., \bm{R}^N, i_1, ..., i_n)g(i_1, ..., i_n|\bm{\rho^0})\big)$, \end{center}\textcolor{red}{i.e., the KL-divergence between the Mallows posterior and the pseudolikelihood's marginal distributions of each item, and then take the sum over all items. All the KL-divergences used in the following texts are computed in this manner.} 
+ $\sum\limits_{i=1}^{n}\text{KL}\big( p(\rho_i|\alpha^0, \bm{R}^1,..., \bm{R}^N) || \sum\limits_{\{i_1, ..., i_n\}\in \mathcal{P}_n}q({{\rho}}_i|\alpha^0, \bm{R}^1, ..., \bm{R}^N, i_1, ..., i_n)g(i_1, ..., i_n|\bm{\rho^0})\big)$, \end{center}{i.e., the KL-divergence between the Mallows posterior's and the pseudolikelihood's marginal distributions of each item, and then take the sum over all items. All the KL-divergences used in the following texts are computed in this manner.} 
 
 The different $g$ functions, following the sequence displayed in \textbf{Figure} \ref{fig:boxPlots}, are chosen as below:
 \begin{itemize}
