@@ -32,7 +32,36 @@
 
 \begin{document}
 \maketitle
-\section{General Notations}
+
+\section{Simulation on time for full data}
+\subsection{Simulation set up}
+In this experiment, we want to compare the speed of the Mallows MCMC and the pseudolikelihood in inferring the consensus parameter $\bm{\rho}$. We first generate a dataset $\{\bm{R}^1, ..., \bm{R}^N \}$, i.e., a dataset that contains full ranking of $n$ items from all $N$ users by drawing i.i.d. samples from the Mallows distribution with a fixed $\bm{\rho}^0$ and $\alpha^0$. We then both use the Mallows MCMC and the pseudo-likelihood, with the known $\alpha^0$, to estimate $\bm{\rho}^0$. For each method, we run the algorithm multiple times, each run with a different number of iterations. For each run, we record the run time, compute the CP consensus of the samples, and then compute the foot rule distance between the CP estimation and $\bm{\rho}^0$. 
+
+We try out different sets of parameters, and for each set of parameters, we generate 10 datasets. In Figure \ref{fig:full_time_simulation}, we plot the foot rule distance between the CP consensus and the true consensus / $n$ on the $y$ axis, and its corresponding run time on the x-axis. It can be observed that given enough time, the Mallows MCMC tends to give more correct estimation of the $\rho$ parameter, however, the pseudo-likelyhood is able to give reasonable estimations much faster. This is due to the fact that there is no burn-in period needed for the pseudo-likehood, and each sample is independently drawn, therefore, making the algorithm more efficient.
+
+\textcolor{red}{Shoud I also show the time per iteration?}
+\begin{figure}[hbt!]
+	\begin{minipage}[t]{.32\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{figures/full_time_simulation/box_alpha03N5000n100}
+	\end{minipage}
+	\begin{minipage}[t]{.32\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{figures/full_time_simulation/box_alpha05N5000n100}
+		
+	\end{minipage} 
+	\begin{minipage}[t]{.32\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{figures/full_time_simulation/box_alpha05N500n50}
+	\end{minipage} 
+
+	\caption{y-axis: d(CP consensus, $\bm{\rho}^0$)/$n$, x-axis: run time}
+	\label{fig:full_time_simulation}
+\end{figure}
+
+
+\section{Simulation results - clicking data}
+\subsection{General Notations}
 
 \begin{itemize}
 	
@@ -42,8 +71,6 @@
 	\item {$\bm{B}^j = \{b^j_1, ..., b^j_n\}$: a binary vector of length $n$, indicating user $j$'s clicks. $b^j_i$ = 1 if $i \in \mathcal{A}_j$, and 0 otherwise}
 	
 \end{itemize}
-\section{Likelihood function for clicking data}
-\section{Simulation results}
 \subsection{Toy example set up}
 In this section, we first simulate a dataset of $N = 20$ users, $n = 20$ items, $\bm{\rho}^0 = 1, ..., n$, and $\alpha^0 = 5$, by sampling from the Mallows distribution. The number of clicks for each user $c_j$ is drawn from a truncated poisson distribution, with a mean of 5 items, minimum of 1 item and maximum of 17 items. We recommend $ k = 2$ items for each user.  
 

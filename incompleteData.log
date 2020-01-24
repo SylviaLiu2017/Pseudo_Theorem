@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.16)  16 DEC 2019 11:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.7.16)  24 JAN 2020 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -356,82 +356,117 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 34.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 39.
+<figures/full_time_simulation/box_alpha03N5000n100.pdf, id=1, 1084.05pt x 722.7
+pt>
+File: figures/full_time_simulation/box_alpha03N5000n100.pdf Graphic file (type 
+pdf)
+<use figures/full_time_simulation/box_alpha03N5000n100.pdf>
+Package pdftex.def Info: figures/full_time_simulation/box_alpha03N5000n100.pdf 
+ used on input line 46.
+(pdftex.def)             Requested size: 137.60461pt x 91.72673pt.
+<figures/full_time_simulation/box_alpha05N5000n100.pdf, id=2, 1084.05pt x 722.7
+pt>
+File: figures/full_time_simulation/box_alpha05N5000n100.pdf Graphic file (type 
+pdf)
+<use figures/full_time_simulation/box_alpha05N5000n100.pdf>
+Package pdftex.def Info: figures/full_time_simulation/box_alpha05N5000n100.pdf 
+ used on input line 50.
+(pdftex.def)             Requested size: 137.60461pt x 91.72673pt.
+<figures/full_time_simulation/box_alpha05N500n50.pdf, id=3, 1084.05pt x 722.7pt
+>
+File: figures/full_time_simulation/box_alpha05N500n50.pdf Graphic file (type pd
+f)
+<use figures/full_time_simulation/box_alpha05N500n50.pdf>
+Package pdftex.def Info: figures/full_time_simulation/box_alpha05N500n50.pdf  u
+sed on input line 55.
+(pdftex.def)             Requested size: 137.60461pt x 91.72673pt.
+ [1
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./figur
+es/full_time_simulation/box_alpha03N5000n100.pdf> <./figures/full_time_simulati
+on/box_alpha05N5000n100.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/full_time_simulati
+on/box_alpha05N5000n100.pdf): PDF inclusion: multiple pdfs with page group incl
+uded in a single page
+> <./figures/full_time_simulation/box_alpha05N500n50.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figures/full_time_simulati
+on/box_alpha05N500n50.pdf): PDF inclusion: multiple pdfs with page group includ
+ed in a single page
+>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 68.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
-<figures/clicking/Pseudo_rho_heat.pdf, id=1, 288.07625pt x 250.9375pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
+<figures/clicking/Pseudo_rho_heat.pdf, id=145, 288.07625pt x 250.9375pt>
 File: figures/clicking/Pseudo_rho_heat.pdf Graphic file (type pdf)
 <use figures/clicking/Pseudo_rho_heat.pdf>
 Package pdftex.def Info: figures/clicking/Pseudo_rho_heat.pdf  used on input li
-ne 55.
+ne 82.
 (pdftex.def)             Requested size: 193.50076pt x 168.55992pt.
-<figures/clicking/Mallows_rho_heat.pdf, id=2, 288.07625pt x 250.9375pt>
+<figures/clicking/Mallows_rho_heat.pdf, id=146, 288.07625pt x 250.9375pt>
 File: figures/clicking/Mallows_rho_heat.pdf Graphic file (type pdf)
 <use figures/clicking/Mallows_rho_heat.pdf>
 Package pdftex.def Info: figures/clicking/Mallows_rho_heat.pdf  used on input l
-ine 61.
+ine 88.
 (pdftex.def)             Requested size: 193.50076pt x 168.55992pt.
-<figures/clicking/pseudo_user1.pdf, id=3, 288.07625pt x 250.9375pt>
+<figures/clicking/pseudo_user1.pdf, id=147, 288.07625pt x 250.9375pt>
 File: figures/clicking/pseudo_user1.pdf Graphic file (type pdf)
 <use figures/clicking/pseudo_user1.pdf>
 Package pdftex.def Info: figures/clicking/pseudo_user1.pdf  used on input line 
-73.
+100.
 (pdftex.def)             Requested size: 193.50076pt x 168.55992pt.
-<figures/clicking/mallows_user1.pdf, id=4, 288.07625pt x 250.9375pt>
+<figures/clicking/mallows_user1.pdf, id=148, 288.07625pt x 250.9375pt>
 File: figures/clicking/mallows_user1.pdf Graphic file (type pdf)
 <use figures/clicking/mallows_user1.pdf>
 Package pdftex.def Info: figures/clicking/mallows_user1.pdf  used on input line
- 79.
+ 106.
 (pdftex.def)             Requested size: 193.50076pt x 168.55992pt.
-<figures/clicking/pseudo_user20.pdf, id=5, 288.07625pt x 250.9375pt>
+<figures/clicking/pseudo_user20.pdf, id=149, 288.07625pt x 250.9375pt>
 File: figures/clicking/pseudo_user20.pdf Graphic file (type pdf)
 <use figures/clicking/pseudo_user20.pdf>
 Package pdftex.def Info: figures/clicking/pseudo_user20.pdf  used on input line
- 84.
+ 111.
 (pdftex.def)             Requested size: 193.50076pt x 168.55992pt.
-<figures/clicking/mallows_user20.pdf, id=6, 288.07625pt x 250.9375pt>
+<figures/clicking/mallows_user20.pdf, id=150, 288.07625pt x 250.9375pt>
 File: figures/clicking/mallows_user20.pdf Graphic file (type pdf)
 <use figures/clicking/mallows_user20.pdf>
 Package pdftex.def Info: figures/clicking/mallows_user20.pdf  used on input lin
-e 90.
+e 117.
 (pdftex.def)             Requested size: 193.50076pt x 168.55992pt.
- [1
-
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <./f
-igures/clicking/Pseudo_rho_heat.pdf> <./figures/clicking/Mallows_rho_heat.pdf>]
- [3 <./figures/clicking/pseudo_user1.pdf> <./figures/clicking/mallows_user1.pdf
-> <./figures/clicking/pseudo_user20.pdf> <./figures/clicking/mallows_user20.pdf
->]
-(./incompleteData.aux) ) 
+ [2 <./figures/clicking/Pseudo_rho_heat.pdf> <./figures/clicking/Mallows_rho_he
+at.pdf>]
+[3 <./figures/clicking/pseudo_user1.pdf> <./figures/clicking/mallows_user1.pdf>
+ <./figures/clicking/pseudo_user20.pdf> <./figures/clicking/mallows_user20.pdf>
+] [4] (./incompleteData.aux) ) 
 Here is how much of TeX's memory you used:
- 4718 strings out of 492616
- 62120 string characters out of 6129481
- 150530 words of memory out of 5000000
- 8524 multiletter control sequences out of 15000+600000
+ 4735 strings out of 492616
+ 63002 string characters out of 6129481
+ 149538 words of memory out of 5000000
+ 8537 multiletter control sequences out of 15000+600000
  18926 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,9n,35p,892b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-
-super/cm-super-t1.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sf
-bx1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx
-1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx14
-40.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1095
-.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1728.p
-fb>
-Output written on incompleteData.pdf (3 pages, 169299 bytes).
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvi
+ps/cm-super/cm-super-t1.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-su
+per/sfbx1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-supe
+r/sfbx1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/
+sfbx1440.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sf
+rm1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm
+1728.pfb>
+Output written on incompleteData.pdf (4 pages, 217135 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 234 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
